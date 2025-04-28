@@ -1,13 +1,8 @@
-body {
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #222;
-}
-.header-section {
+.main-section {
   background: linear-gradient(
       to right,
-      rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0)
+      rgba(255, 255, 255, 0.933),
+      rgba(255, 255, 255, 0.301)
     ),
     url("./Home-Images/outdoor-market-with-tents-people-park_1319036-9778.jpg");
 
@@ -44,6 +39,9 @@ body {
   margin-bottom: auto;
   text-align: left;
 }
+.div-content {
+  color: #222;
+}
 .div-content p {
   font-size: 1.25rem;
   margin-left: 1.5em;
@@ -64,26 +62,59 @@ body {
 }
 
 .cta-button {
-  background-color: #3b82f6;
+  background-color: #007bff;
   color: white;
 }
 
 .cta-button:hover {
-  background-color: #3c3cd3;
+  background-color: #066fe0;
 }
 
 .cta-secondary {
-  background-color: transparent;
-  border: 2px solid #fff;
-  color: #fff;
+  background-color: white;
+  border: 1px solid rgba(36, 36, 36, 0.5);
+  color: #222;
 }
 
 .cta-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(213, 213, 213, 0.15);
 }
 
 .cta-group {
   text-align: left;
   margin-left: 1.5em;
   margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .main-section {
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.933),
+        rgba(255, 255, 255, 0.301)
+      ),
+      url("./Home-Images/outdoor-market-with-tents-people-park_1319036-9778.jpg");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px 15px;
+  }
+
+  .div-content h1 {
+    font-size: 2rem;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .div-content p {
+    font-size: 1rem;
+    margin: 10px auto;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .cta-group {
+    text-align: center;
+    margin: 20px auto 0;
+  }
 }
