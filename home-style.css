@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+.header-section {
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0)
+    ),
+    url("./Home-Images/outdoor-market-with-tents-people-park_1319036-9778.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.header-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.div-content {
+  position: relative;
+  z-index: 1;
+}
+.div-content h1 {
+  font-size: 3rem;
+  margin-left: 0.5em;
+  max-width: 700px;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
+}
+.div-content p {
+  font-size: 1.25rem;
+  margin-left: 1.5em;
+  max-width: 700px;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
+}
+
+.cta-button,
+.cta-secondary {
+  display: inline-block;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 10px 8px;
+}
+
+.cta-button {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.cta-button:hover {
+  background-color: #3c3cd3;
+}
+
+.cta-secondary {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.cta-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.cta-group {
+  text-align: left;
+  margin-left: 1.5em;
+  margin-top: 20px;
+}
