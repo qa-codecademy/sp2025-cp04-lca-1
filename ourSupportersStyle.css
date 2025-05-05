@@ -1,24 +1,16 @@
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #f9fafb;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
 .sponsors-movingText {
   width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
   overflow: hidden;
   background-color: #f9fafb;
-  /* border-top: 1px solid #ccc; */
-  /* border-bottom: 1px solid #ccc; */
   position: relative;
 }
 
 .sponsors-track {
   display: flex;
   width: max-content;
-  animation: scroll-left 20s linear infinite;
+  animation: scroll-left 50s linear infinite;
 }
 
 .sponsors-movingText:hover .sponsors-track {
@@ -33,13 +25,13 @@ body {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  padding: 0 16px;
+  padding: 0 12px;
   font-size: 14px;
 }
 
 .sponsor img {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   margin-left: 6px;
 }
 
@@ -65,24 +57,25 @@ body {
 
 #supporter-color {
   color: black;
-  font-size: 20px;
-  margin-bottom: 4px;
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+#supporters-background p {
+  font-size: 18px;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 @media (min-width: 768px) {
-  body {
-    padding-left: 48px;
-    padding-right: 48px;
-  }
-
   .sponsor {
-    padding: 0 30px;
+    padding: 0 20px;
     font-size: 16px;
   }
 
   .sponsor img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     margin-left: 8px;
   }
 
@@ -91,6 +84,10 @@ body {
   }
 
   #supporter-color {
-    font-size: 24px;
+    font-size: 32px;
+  }
+
+  #supporters-background p {
+    font-size: 20px;
   }
 }
