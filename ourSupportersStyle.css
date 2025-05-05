@@ -1,6 +1,6 @@
 .sponsors-movingText {
   width: 100%;
-  max-width: 100%;
+  max-width: 95vw;
   margin: 0 auto;
   overflow: hidden;
   background-color: #f9fafb;
@@ -25,18 +25,18 @@
   display: flex;
   align-items: center;
   white-space: nowrap;
-  padding: 0 0.8em;
-  font-size: clamp(0.6rem, 0.9vw, 0.85rem);
+  padding: 0 12px;
+  font-size: 14px;
 }
 
 .sponsor img {
-  width: clamp(12px, 1.2vw, 16px);
-  height: clamp(12px, 1.2vw, 16px);
-  margin-left: 0.4em;
+  width: 18px;
+  height: 18px;
+  margin-left: 6px;
 }
 
 .spacer {
-  flex: 0 0 0.8em;
+  flex: 0 0 16px;
 }
 
 @keyframes scroll-left {
@@ -52,42 +52,42 @@
   background-color: #f9fafb;
   text-align: center;
   color: #4b5563;
-  padding: 1.5em 1em;
+  padding: 24px 16px;
 }
 
 #supporter-color {
   color: black;
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
-  margin-bottom: 0.4em;
+  font-size: 28px;
+  margin-bottom: 6px;
 }
 
 #supporters-background p {
-  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  font-size: 18px;
   margin: 0 auto;
-  max-width: 80%;
+  max-width: 800px;
 }
 
 @media (min-width: 768px) {
   .sponsor {
-    padding: 0 1em;
-    font-size: clamp(0.75rem, 1vw, 1rem);
+    padding: 0 20px;
+    font-size: 16px;
   }
 
   .sponsor img {
-    width: clamp(14px, 1.5vw, 18px);
-    height: clamp(14px, 1.5vw, 18px);
-    margin-left: 0.5em;
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
   }
 
   .spacer {
-    flex: 0 0 1.5em;
+    flex: 0 0 48px;
   }
 
   #supporter-color {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: 32px;
   }
 
   #supporters-background p {
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-size: 20px;
   }
 }
