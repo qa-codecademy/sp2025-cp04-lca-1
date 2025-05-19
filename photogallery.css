@@ -1,11 +1,9 @@
-/* Wrapper Section */
 .gallery-section-wrapper {
   background-color: #f9fafb;
   padding: 40px 20px;
   margin: 40px auto;
 }
 
-/* Header */
 .gallery-header__title {
   text-align: center;
   color: black;
@@ -27,7 +25,6 @@
   border-radius: 2px;
 }
 
-/* Tabs */
 .gallery-tabs {
   display: flex;
   justify-content: center;
@@ -61,7 +58,6 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Gallery Cards */
 .gallery-section__card-container {
   display: flex;
   flex-wrap: wrap;
@@ -90,7 +86,7 @@
 .gallery-card__image {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* <<== Ovde e promeneto od cover na contain */
+  object-fit: contain;
   object-position: center;
   display: block;
 }
@@ -174,20 +170,17 @@
   right: 0;
 }
 
-/* Nova klasa za onemozhuvanje skroluvanje koga e otvoren lightbox */
 .no-scroll {
   overflow: hidden;
   height: 100vh;
 }
 
-/* Responsive za tablet */
 @media (max-width: 1024px) {
   .gallery-card {
     width: 45%;
   }
 }
 
-/* Responsive za telefon */
 @media (max-width: 600px) {
   .gallery-card {
     width: 90%;

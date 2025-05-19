@@ -14,7 +14,6 @@ const loadMoreBtn = document.getElementById("loadMoreBtn");
 let currentTab = "all";
 let displayedImages = [];
 
-// Utility za fade transition
 function fadeOutIn(callback) {
   container.style.opacity = 0;
   setTimeout(() => {
@@ -23,7 +22,6 @@ function fadeOutIn(callback) {
   }, 300);
 }
 
-// Prikazi inicijalni sliki
 function showInitialImages(tab) {
   fadeOutIn(() => {
     container.innerHTML = "";
@@ -34,7 +32,6 @@ function showInitialImages(tab) {
   });
 }
 
-// Load More dodava uste 3 sliki
 loadMoreBtn.addEventListener("click", () => {
   fadeOutIn(() => {
     const nextImages = getImagesByTab(currentTab, 3, displayedImages);
@@ -43,7 +40,6 @@ loadMoreBtn.addEventListener("click", () => {
   });
 });
 
-// Dobij random sliki bez duplikati
 function getImagesByTab(tab, count = 3, exclude = []) {
   let available = [...allImages];
 
@@ -59,7 +55,6 @@ function getImagesByTab(tab, count = 3, exclude = []) {
   return shuffled.slice(0, count);
 }
 
-// Render sliki
 function renderImages(images) {
   container.innerHTML = "";
   images.forEach((src) => {
@@ -73,7 +68,6 @@ function renderImages(images) {
   });
 }
 
-// Tabs listeners
 document.querySelectorAll(".gallery-tabs__button").forEach((button) => {
   button.addEventListener("click", () => {
     const target = button.dataset.target;
@@ -89,7 +83,6 @@ document.querySelectorAll(".gallery-tabs__button").forEach((button) => {
   });
 });
 
-// Pochetno vchituvanje
 showInitialImages(currentTab);
 
 const lightbox = document.getElementById("lightbox");
@@ -98,10 +91,9 @@ const lightboxClose = document.querySelector(".lightbox__close");
 const arrowLeft = document.querySelector(".lightbox__arrow--left");
 const arrowRight = document.querySelector(".lightbox__arrow--right");
 
-let allCurrentImages = []; // patiki do site sliki shto se prikazani
+let allCurrentImages = [];
 let currentImageIndex = 0;
 
-// Klik na slika => otvori lightbox
 container.addEventListener("click", (e) => {
   const clickedImage = e.target.closest(".gallery-card__image");
   if (clickedImage) {
@@ -115,7 +107,6 @@ container.addEventListener("click", (e) => {
   }
 });
 
-// Zatvori lightbox
 function closeLightbox() {
   lightbox.style.display = "none";
   document.body.classList.remove("no-scroll");
@@ -130,7 +121,6 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft") showPrevImage();
 });
 
-// Slejna i prethodna slika
 function showNextImage() {
   if (allCurrentImages.length === 0) return;
   currentImageIndex = (currentImageIndex + 1) % allCurrentImages.length;
