@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="headerstyle.css" />
     <link rel="stylesheet" href="home-style.css" />
     <link rel="stylesheet" href="ourSupportersStyle.css" />
+    <link rel="stylesheet" href="photogallery.css" />
     <script src="headerscript.js" defer></script>
+    <script src="photogallery.js" defer></script>
   </head>
   <body>
     <!-- ============================================================= HEADER ============================================================= -->
@@ -29,7 +31,7 @@
             <a href="#mission-vision">Mission & Vision</a>
           </li>
           <li class="header-nav-item"><a href="#projects">Projects</a></li>
-          <li class="header-nav-item"><a href="#gallery">Gallery</a></li>
+          <li class="header-nav-item"><a href="#photogallery">Gallery</a></li>
           <li class="header-nav-item"><a href="#contact">Contact</a></li>
           <li class="header-language-wrapper">
             <div class="header-language">
@@ -238,7 +240,54 @@
         <!-- End .sponsors-track -->
       </div>
       <!-- End .sponsors-movingText -->
+      <!-- ================================================================================================================================ -->
+
+      <!-- ============================================================= PHOTOGALLERY ============================================================= -->
+      <section class="gallery-section-wrapper" id="photogallery">
+        <header class="gallery-header">
+          <h2 class="gallery-header__title">Photo Gallery</h2>
+          <p class="gallery-header__subtitle">
+            Explore visual highlights from our projects and community events
+          </p>
+          <div class="gallery-header__underline"></div>
+        </header>
+
+        <nav class="gallery-tabs">
+          <button
+            class="gallery-tabs__button gallery-tabs__button--active"
+            data-target="all"
+          >
+            All Photos
+          </button>
+          <button class="gallery-tabs__button" data-target="projects">
+            Projects
+          </button>
+          <button class="gallery-tabs__button" data-target="events">
+            Events
+          </button>
+          <button class="gallery-tabs__button" data-target="volunteers">
+            Volunteers
+          </button>
+        </nav>
+
+        <main class="gallery-main-content">
+          <section class="gallery-section" id="all">
+            <div class="gallery-section__card-container"></div>
+          </section>
+        </main>
+
+        <div class="load-more-wrapper">
+          <button id="loadMoreBtn">Load More</button>
+        </div>
+      </section>
+
+      <div id="lightbox" class="lightbox">
+        <span class="lightbox__close">&times;</span>
+        <img class="lightbox__image" src="" alt="Preview" />
+        <button class="lightbox__arrow lightbox__arrow--left">&#10094;</button>
+        <button class="lightbox__arrow lightbox__arrow--right">&#10095;</button>
+      </div>
+      <!-- ================================================================================================================================ -->
     </main>
-    <!-- ================================================================================================================================ -->
   </body>
 </html>

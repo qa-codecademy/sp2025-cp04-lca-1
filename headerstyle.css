@@ -32,7 +32,7 @@ body {
 }
 
 .header-logo img {
-  width: 120px;
+  width: 150px;
   height: auto;
 }
 
@@ -79,7 +79,7 @@ body {
   justify-content: center;
   width: 26px;
   height: 26px;
-  border-radius: 50%;
+  border-radius: 50%;  
   overflow: hidden;
   transition: transform 0.3s ease;
 }
