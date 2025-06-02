@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9fbff;
+  color: #333;
+}
+
+.wrapper {
+  padding: 60px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 4px;
+  background-color: #3b82f6;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 40px 60px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* поестетична, мека сенка */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: calc(50% - 20px); /* простор меѓу двете картички */
+  }
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+}
+
+.icon img {
+  width: 28px;
+  height: 28px;
+}
+
+.icon.blue {
+  background-color: #e0edff;
+}
+
+.icon.green {
+  background-color: #dcfce7;
+}
+
+.card h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
