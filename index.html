@@ -9,9 +9,12 @@
     <link rel="stylesheet" href="ourSupportersStyle.css" />
     <link rel="stylesheet" href="photogallery.css" />
     <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="mission&vision.css" />
     <script src="footer.js" defer></script>
     <script src="headerscript.js" defer></script>
     <script src="photogallery.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script defer src="form.js"></script>
   </head>
   <body>
     <!-- ============================================================= HEADER ============================================================= -->
@@ -30,7 +33,7 @@
         <ul class="header-ul-items" id="menu">
           <li class="header-nav-item"><a href="#home">Home</a></li>
           <li class="header-nav-item">
-            <a href="#mission-vision">Mission & Vision</a>
+            <a href="#missionvision-connect">Mission & Vision</a>
           </li>
           <li class="header-nav-item"><a href="#projects">Projects</a></li>
           <li class="header-nav-item"><a href="#photogallery">Gallery</a></li>
@@ -69,9 +72,55 @@
         </div>
       </div>
     </main>
+    <!-- <br />
     <br />
-    <br />
-    <br />
+    <br /> -->
+    <!-- ================================================================================================================================ -->
+
+    <!-- ====================================================== MISSION & VISION ====================================================== -->
+    <section class="wrapper" id="missionvision-connect">
+      <h2 class="section-title">Mission & Vision</h2>
+      <div class="section-underline"></div>
+      <div class="cards">
+        <!-- Mission -->
+        <div class="card">
+          <div class="icon blue">
+            <img src="mission&vision-images/kompas.png" alt="Mission Icon" />
+          </div>
+          <h3>Our Mission</h3>
+          <p>
+            LOCAL ACT is dedicated to fostering sustainable local development
+            through community-driven initiatives, collaborative partnerships,
+            and innovative solutions that address the unique challenges faced by
+            communities.
+          </p>
+          <p>
+            We believe in empowering individuals and organizations to take an
+            active role in shaping their communities, creating inclusive spaces
+            where everyone can thrive and contribute to positive change.
+          </p>
+        </div>
+
+        <!-- Vision -->
+        <div class="card">
+          <div class="icon green">
+            <img src="mission&vision-images/oko.png" alt="Vision Icon" />
+          </div>
+          <h3>Our Vision</h3>
+          <p>
+            We envision vibrant, resilient communities where local resources are
+            leveraged effectively, social cohesion is strengthened, and
+            sustainable development practices are embedded in everyday life.
+          </p>
+          <p>
+            By 2030, we aim to have supported over 100 communities in developing
+            self-sustaining initiatives that improve quality of life, preserve
+            cultural heritage, and protect the environment for future
+            generations.
+          </p>
+        </div>
+      </div>
+    </section>
     <!-- ================================================================================================================================ -->
 
     <!-- ===================================================== OUR SUPPORTERS =========================================================== -->
@@ -82,6 +131,8 @@
         <p>
           We're grateful to these organizations for making our work possible
         </p>
+        <div class="section-underline"></div>
+        <br />
       </div>
 
       <!-- SCROLLING SPONSORS SECTION -->
@@ -251,7 +302,8 @@
           <p class="gallery-header__subtitle">
             Explore visual highlights from our projects and community events
           </p>
-          <div class="gallery-header__underline"></div>
+          <div class="section-underline"></div>
+          <br />
         </header>
 
         <nav class="gallery-tabs">
@@ -387,18 +439,7 @@
 
           <div class="footer-form">
             <h3 class="footer-title">Let's Keep In Touch</h3>
-            <form
-              action="https://formsubmit.co/filiptrifunovski88@gmail.com"
-              method="POST"
-              class="contact-form"
-            >
-              <input type="text" name="_honey" class="form-hidden" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input
-                type="hidden"
-                name="_next"
-                value="https://example.com/thank-you.html"
-              />
+            <form id="contact-form" action="something.php" method="POST">
               <input
                 type="text"
                 name="name"
