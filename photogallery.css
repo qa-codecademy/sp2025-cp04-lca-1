@@ -17,7 +17,6 @@
   font-size: 1.3em;
 }
 
-<<<<<<< Updated upstream
 .gallery-header__underline {
   width: 40px;
   height: 3px;
@@ -26,8 +25,6 @@
   border-radius: 2px;
 }
 
-=======
->>>>>>> Stashed changes
 .gallery-tabs {
   display: flex;
   justify-content: center;
@@ -37,7 +34,6 @@
   border-radius: 9999px;
   width: fit-content;
   margin: 0 auto 30px;
-  flex-wrap: wrap;
 }
 
 .gallery-tabs__button {
@@ -78,8 +74,8 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
-  width: 30%;
-  aspect-ratio: 3 / 2;
+  width: 23%;
+  aspect-ratio: 4 / 3;
   cursor: pointer;
 }
 
@@ -179,73 +175,14 @@
   height: 100vh;
 }
 
-/* =================== RESPONSIVE DESIGN =================== */
-
 @media (max-width: 1024px) {
   .gallery-card {
-    width: 42%;
-  }
-}
-
-@media (max-width: 768px) {
-  .gallery-header__title {
-    font-size: 24px;
-  }
-
-  .gallery-header__subtitle {
-    font-size: 1.1em;
-    padding: 0 10px;
-  }
-
-  .gallery-tabs {
-    gap: 8px;
-    padding: 10px;
-  }
-
-  .gallery-tabs__button {
-    padding: 8px 16px;
-    font-size: 0.95rem;
-  }
-
-  .gallery-card {
-    width: 90%;
-    aspect-ratio: 4 / 3;
+    width: 45%;
   }
 }
 
 @media (max-width: 600px) {
-  .gallery-section-wrapper {
-    padding: 30px 10px;
-  }
-
   .gallery-card {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-  }
-
-  .gallery-tabs {
-    gap: 6px;
-    padding: 8px;
-  }
-
-  .gallery-tabs__button {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-  }
-
-  #loadMoreBtn {
-    padding: 10px 16px;
-    font-size: 0.95rem;
-  }
-
-  .lightbox__close {
-    top: 20px;
-    right: 20px;
-    font-size: 1.5rem;
-  }
-
-  .lightbox__arrow {
-    font-size: 2.5rem;
-    padding: 0 10px;
+    width: 90%;
   }
 }
