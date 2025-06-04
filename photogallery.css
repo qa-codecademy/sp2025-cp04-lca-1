@@ -17,9 +17,13 @@
   font-size: 1.3em;
 }
 
-/* .gallery-header__underline {
-  display: none;
-} */
+.gallery-header__underline {
+  width: 40px;
+  height: 3px;
+  background-color: #3b82f6;
+  margin: 15px auto 30px;
+  border-radius: 2px;
+}
 
 .gallery-tabs {
   display: flex;
