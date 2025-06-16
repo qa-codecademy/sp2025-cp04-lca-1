@@ -1,0 +1,168 @@
+.info-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #f8f9fb, #eaeef3);
+  max-width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* FAQ и Contact се прилагодливи во ширина */
+.faq-section,
+.contact-section {
+  flex: 1 1 300px;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Наслови */
+.faq-title,
+.contact-section h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #111827;
+}
+
+/* FAQ Items */
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 16px;
+  color: #1f2937;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #f1f5f9;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+  font-size: 16px;
+  color: #4b5563;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #f9fafb;
+  transition: max-height 0.4s ease;
+  padding: 0 16px;
+  border-left: 3px solid #3b82f6;
+  margin-top: 6px;
+  border-radius: 0 0 8px 8px;
+}
+
+.faq-answer p {
+  margin: 12px 0;
+  font-size: 16px;
+  color: #374151;
+}
+
+/* Контакт форма */
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-container .input-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.contact-container .input-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 18px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  background: #fff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.contact-container input[type="email"],
+.contact-container input[type="text"]:not([name="name"]):not([name="phone"]),
+.contact-container textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  background: #fff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.contact-container textarea {
+  border-radius: 20px;
+  resize: vertical;
+  max-width: 100%;
+}
+
+.contact-container button {
+  background-color: #007bff;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  max-width: 100%;
+}
+
+.contact-container button:hover {
+  background-color: #0056b3;
+}
+
+.contact-container .response-msg {
+  margin-top: 10px;
+  color: green;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  .info-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-container .input-row {
+    flex-direction: column;
+  }
+}

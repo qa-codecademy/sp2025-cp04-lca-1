@@ -1,0 +1,90 @@
+.login-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1500;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.login-popup-overlay.active {
+  display: flex;
+}
+
+.login-popup-content {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 320px;
+  max-width: 90%;
+  position: relative;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-popup-content h2 {
+  margin-bottom: 20px;
+  color: #007bff;
+  font-weight: 600;
+  text-align: center;
+}
+
+.login-popup-content label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+.login-popup-content input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1.5px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.login-popup-content input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.login-popup-content button[type="submit"] {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 0;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-popup-content button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.login-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.login-close-btn:hover {
+  color: #007bff;
+}
