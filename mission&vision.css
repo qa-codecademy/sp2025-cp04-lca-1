@@ -1,14 +1,11 @@
-body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f9fbff;
-  color: #333;
-}
-
 .wrapper {
   padding: 60px 20px;
   width: 100%;
   box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9fbff;
+  color: #333;
+  margin: 0; /* од body margin */
 }
 
 .section-title {
@@ -58,7 +55,7 @@ body {
   padding: 40px 60px;
   width: 100%;
   box-sizing: border-box;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* поестетична, мека сенка */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -69,7 +66,7 @@ body {
 
 @media (min-width: 768px) {
   .card {
-    width: calc(50% - 20px); /* простор меѓу двете картички */
+    width: calc(50% - 20px);
   }
 }
 

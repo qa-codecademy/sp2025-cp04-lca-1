@@ -13,6 +13,7 @@ const container = document.querySelector(".gallery-section__card-container");
 const loadMoreBtn = document.getElementById("loadMoreBtn");
 let currentTab = "all";
 let displayedImages = [];
+const IMAGES_PER_LOAD = 6;
 
 function fadeOutIn(callback) {
   container.style.opacity = 0;
@@ -25,22 +26,34 @@ function fadeOutIn(callback) {
 function showInitialImages(tab) {
   fadeOutIn(() => {
     container.innerHTML = "";
-    const initialCount = tab === "all" ? 9 : 3;
-    displayedImages = getImagesByTab(tab, initialCount);
+    displayedImages = getImagesByTab(tab, IMAGES_PER_LOAD);
     renderImages(displayedImages);
-    loadMoreBtn.style.display = "block";
+    updateLoadMoreVisibility();
   });
 }
 
 loadMoreBtn.addEventListener("click", () => {
   fadeOutIn(() => {
-    const nextImages = getImagesByTab(currentTab, 3, displayedImages);
+    const nextImages = getImagesByTab(
+      currentTab,
+      IMAGES_PER_LOAD,
+      displayedImages
+    );
     displayedImages = [...displayedImages, ...nextImages];
     renderImages(displayedImages);
+    updateLoadMoreVisibility();
   });
 });
 
-function getImagesByTab(tab, count = 3, exclude = []) {
+function updateLoadMoreVisibility() {
+  if (displayedImages.length >= allImages.length) {
+    loadMoreBtn.style.display = "none";
+  } else {
+    loadMoreBtn.style.display = "block";
+  }
+}
+
+function getImagesByTab(tab, count = IMAGES_PER_LOAD, exclude = []) {
   let available = [...allImages];
 
   if (exclude.length > 0) {
