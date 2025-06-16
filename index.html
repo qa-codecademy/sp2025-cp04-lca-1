@@ -10,9 +10,16 @@
     <link rel="stylesheet" href="photogallery.css" />
     <link rel="stylesheet" href="footer.css" />
     <link rel="stylesheet" href="mission&vision.css" />
-    <link rel="stylesheet" href="fqaa.css" />
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="faq&form.css" />
+    <link rel="stylesheet" href="body&html.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <script src="footer.js" defer></script>
     <script src="headerscript.js" defer></script>
+    <script src="form.js" defer></script>
     <script src="photogallery.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script defer src="form.js"></script>
@@ -20,7 +27,9 @@
       src="https://kit.fontawesome.com/a2e0e6d26b.js"
       crossorigin="anonymous"
     ></script>
-    <script src="fqa.js" defer></script>
+    <script src="faq.js" defer></script>
+    <script src="login.js" defer></script>
+    <script src="translate.js" defer></script>
   </head>
   <body>
     <!-- ============================================================= HEADER ============================================================= -->
@@ -31,11 +40,13 @@
             <img src="header-images/logopng.png" alt="Logo" />
           </a>
         </div>
+
         <div class="menu-icon" id="menu-icon">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
         </div>
+
         <ul class="header-ul-items" id="menu">
           <li class="header-nav-item"><a href="#home">Home</a></li>
           <li class="header-nav-item">
@@ -43,9 +54,12 @@
           </li>
           <li class="header-nav-item"><a href="#projects">Projects</a></li>
           <li class="header-nav-item"><a href="#photogallery">Gallery</a></li>
-          <li class="header-nav-item"><a href="#footer-connect">Contact</a></li>
-          <li class="header-nav-item"><a href="#fqa-connect">FQA</a></li>
-          <li class="header-language-wrapper">
+          <li class="header-nav-item">
+            <a href="#faq&from-connect">Contact</a>
+          </li>
+
+          <!-- Мобилна верзија: знамињата и логин копчето внатре во менито -->
+          <li class="header-language-wrapper-mobile">
             <div class="header-language">
               <img src="header-images/Flag-North-Macedonia.gif" alt="MK" />
             </div>
@@ -55,10 +69,109 @@
                 alt="ENG"
               />
             </div>
+            <div class="header-login">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                />
+              </svg>
+            </div>
           </li>
         </ul>
+
+        <!-- Десктоп верзија: знамиња и логин копче заедно десно -->
+        <div class="header-language-wrapper-desktop">
+          <div class="header-language">
+            <img src="header-images/Flag-North-Macedonia.gif" alt="MK" />
+          </div>
+          <div class="header-language">
+            <img
+              src="header-images/Flag_of_the_United_Kingdom_(1-2).svg.webp"
+              alt="ENG"
+            />
+          </div>
+          <div class="header-login">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </header>
+
+    <!-- ================================================================================================================================ -->
+
+    <!-- ============================================================= LOGIN ============================================================= -->
+    <div id="login-popup" class="login-popup-overlay">
+      <div class="login-popup-content">
+        <button id="login-close-btn" class="login-close-btn">&times;</button>
+
+        <!-- Login форма -->
+        <div id="login-form-container">
+          <h2>Login</h2>
+          <form id="login-form">
+            <label for="username-login">Username</label>
+            <input type="text" id="username-login" name="username" required />
+
+            <label for="password-login">Password</label>
+            <input
+              type="password"
+              id="password-login"
+              name="password"
+              required
+            />
+
+            <button type="submit">Log In</button>
+          </form>
+          <p style="margin-top: 15px; text-align: center">
+            Don't have an account?
+            <a href="#" id="show-register-form">Create Account</a>
+          </p>
+        </div>
+
+        <!-- Register форма (скриена по дифолт) -->
+        <div id="register-form-container" style="display: none">
+          <h2>Create Account</h2>
+          <form id="register-form">
+            <label for="username-register">Username</label>
+            <input
+              type="text"
+              id="username-register"
+              name="username"
+              required
+            />
+
+            <label for="email-register">Email</label>
+            <input type="email" id="email-register" name="email" required />
+
+            <label for="password-register">Password</label>
+            <input
+              type="password"
+              id="password-register"
+              name="password"
+              required
+            />
+
+            <label for="confirm-password-register">Confirm Password</label>
+            <input
+              type="password"
+              id="confirm-password-register"
+              name="confirmPassword"
+              required
+            />
+
+            <button type="submit">Register</button>
+          </form>
+          <p style="margin-top: 15px; text-align: center">
+            Already have an account?
+            <a href="#" id="show-login-form">Log In</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
     <!-- ================================================================================================================================ -->
 
     <!-- ============================================================= HOME ============================================================= -->
@@ -350,46 +463,94 @@
       </div>
       <!-- ================================================================================================================================ -->
 
-      <!-- ============================================================= FQA ============================================================= -->
-      <section class="faq-section" id="fqa-connect">
-        <h2 class="faq-title">(FQA) Frequently Asked Questions</h2>
+      <!-- ======================================================== FAQ / FORM ======================================================== -->
+      <!-- FAQ Секција (непроменета) -->
+      <div class="info-wrapper" id="faq&from-connect">
+        <section class="faq-section">
+          <h2 class="faq-title">(FAQ) Frequently Asked Questions</h2>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>What is your return policy?</span>
-            <i class="fas fa-chevron-down arrow-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>
-              We offer returns within 14 days if the product is unused and in
-              its original packaging.
-            </p>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What is your return policy?</span>
+              <i class="fas fa-chevron-down arrow-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                We offer returns within 14 days if the product is unused and in
+                its original packaging.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>How long does delivery take?</span>
-            <i class="fas fa-chevron-down arrow-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Delivery usually takes 3–5 business days within the country.</p>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How long does delivery take?</span>
+              <i class="fas fa-chevron-down arrow-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Delivery usually takes 3–5 business days within the country.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Do you ship internationally?</span>
-            <i class="fas fa-chevron-down arrow-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>
-              Yes, we ship internationally with additional shipping charges
-              depending on the destination.
-            </p>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do you ship internationally?</span>
+              <i class="fas fa-chevron-down arrow-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes, we ship internationally with additional shipping charges
+                depending on the destination.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-section">
+          <div class="contact-container">
+            <h2>Let's Keep In Touch</h2>
+            <form id="contactForm">
+              <div class="input-row">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name"
+                  required
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  required
+                />
+              </div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+              />
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+              />
+              <textarea
+                name="message"
+                placeholder="Message"
+                rows="5"
+                required
+              ></textarea>
+              <button type="submit">Send Message</button>
+              <p id="formResponse" class="response-msg"></p>
+            </form>
+          </div>
+        </section>
+      </div>
       <!-- ================================================================================================================================ -->
 
       <!-- ============================================================= FOOTER ============================================================= -->
@@ -486,34 +647,33 @@
             </div>
           </div>
 
-          <div class="footer-form">
-            <h3 class="footer-title">Let's Keep In Touch</h3>
-            <form id="contact-form" action="something.php" method="POST">
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                required
-                class="form-input"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                required
-                class="form-input"
-              />
-              <textarea
-                name="message"
-                placeholder="Message"
-                required
-                class="form-textarea"
-              ></textarea>
-              <button type="submit" class="form-button">Send</button>
-              <p id="form-message" class="form-status-message"></p>
-            </form>
+          <div class="footer-journey">
+            <h3 class="footer-title">Our Journey</h3>
+            <ul class="journey-timeline simple">
+              <li>
+                <span class="timeline-year">2018</span> – Local Act was founded
+                with a vision for sustainable community action.
+              </li>
+              <li>
+                <span class="timeline-year">2019</span> – Launched our first
+                youth-led project in Makedonski Brod.
+              </li>
+              <li>
+                <span class="timeline-year">2021</span> – Expanded impact to 6
+                rural communities across Macedonia.
+              </li>
+              <li>
+                <span class="timeline-year">2023</span> – Built strategic
+                partnerships with schools and NGOs.
+              </li>
+              <li>
+                <span class="timeline-year">2024</span> – Recognized nationally
+                for civic innovation and youth engagement.
+              </li>
+            </ul>
           </div>
         </div>
+
         <div class="footer-bottom">© 2025 LOCAL ACT. All rights reserved.</div>
       </footer>
 
