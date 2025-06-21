@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      if (window.location.hash) {
+        history.replaceState(
+          null,
+          document.title,
+          window.location.pathname + window.location.search
+        );
+      }
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Local Act</title>
@@ -13,6 +25,7 @@
     <link rel="stylesheet" href="login.css" />
     <link rel="stylesheet" href="faq&form.css" />
     <link rel="stylesheet" href="body&html.css" />
+    <link rel="stylesheet" href="ourproject.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -28,6 +41,7 @@
     ></script>
     <script src="faq.js" defer></script>
     <script src="login.js" defer></script>
+    <script src="ourproject.js" defer></script>
     <script src="translate.js" defer></script>
   </head>
   <body>
@@ -60,20 +74,39 @@
           <!-- Мобилна верзија: знамињата и логин копчето внатре во менито -->
           <li class="header-language-wrapper-mobile">
             <div class="header-language">
-              <img src="header-images/Flag-North-Macedonia.gif" alt="MK" />
+              <img
+                src="header-images/Flag-North-Macedonia.gif"
+                alt="MK"
+                data-lang="mk"
+              />
             </div>
             <div class="header-language">
               <img
                 src="header-images/Flag_of_the_United_Kingdom_(1-2).svg.webp"
                 alt="ENG"
+                data-lang="en"
               />
             </div>
-            <div class="header-login">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-                />
-              </svg>
+            <div
+              aria-label="User Login Button"
+              tabindex="0"
+              role="button"
+              class="user-profile"
+            >
+              <div class="user-profile-inner">
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <g data-name="Layer 2" id="Layer_2">
+                    <path
+                      d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"
+                    ></path>
+                  </g>
+                </svg>
+                <p>Log In</p>
+              </div>
             </div>
           </li>
         </ul>
@@ -81,20 +114,51 @@
         <!-- Десктоп верзија: знамиња и логин копче заедно десно -->
         <div class="header-language-wrapper-desktop">
           <div class="header-language">
-            <img src="header-images/Flag-North-Macedonia.gif" alt="MK" />
+            <img
+              src="header-images/Flag-North-Macedonia.gif"
+              alt="MK"
+              data-lang="mk"
+            />
           </div>
           <div class="header-language">
             <img
               src="header-images/Flag_of_the_United_Kingdom_(1-2).svg.webp"
               alt="ENG"
+              data-lang="en"
             />
           </div>
-          <div class="header-login">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path
-                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-              />
-            </svg>
+          <div
+            aria-label="User Login Button"
+            tabindex="0"
+            role="button"
+            class="user-profile"
+          >
+            <div class="user-profile-inner">
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <g data-name="Layer 2" id="Layer_2">
+                  <path
+                    d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"
+                  ></path>
+                </g>
+              </svg>
+              <p>Log In</p>
+            </div>
+
+            <!-- User Dropdown Menu (shown when logged in) -->
+            <div id="user-dropdown" class="user-dropdown" style="display: none">
+              <div class="dropdown-item" id="your-account-btn">
+                <i class="fas fa-user"></i>
+                Your Account
+              </div>
+              <div class="dropdown-item" id="header-logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -107,66 +171,137 @@
       <div class="login-popup-content">
         <button id="login-close-btn" class="login-close-btn">&times;</button>
 
-        <!-- Login форма -->
-        <div id="login-form-container">
+        <!-- User Profile Section (shown when logged in) -->
+        <div id="user-profile-container" style="display: none">
+          <h2>Welcome!</h2>
+          <div class="user-info">
+            <div class="user-avatar">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="user-details">
+              <h3 id="profile-username">Username</h3>
+              <p id="profile-email">email@example.com</p>
+              <p class="member-since">
+                Member since: <span id="profile-date">2024</span>
+              </p>
+            </div>
+          </div>
+          <div class="profile-actions">
+            <button id="back-btn" class="back-button">
+              <i class="fas fa-edit"></i>
+              Edit Account
+            </button>
+          </div>
+        </div>
+
+        <!-- Edit Account Section -->
+        <div id="edit-account-container" style="display: none">
+          <h2>Edit Account</h2>
+          <form id="edit-account-form">
+            <label for="edit-email">Email</label>
+            <input type="email" id="edit-email" name="email" required />
+
+            <div class="password-section">
+              <h3>Change Password</h3>
+              <label for="current-password">Current Password</label>
+              <input
+                type="password"
+                id="current-password"
+                name="currentPassword"
+              />
+
+              <label for="edit-password">New Password</label>
+              <input type="password" id="edit-password" name="password" />
+
+              <label for="edit-confirm-password">Confirm New Password</label>
+              <input
+                type="password"
+                id="edit-confirm-password"
+                name="confirmPassword"
+              />
+            </div>
+
+            <div class="edit-actions">
+              <button type="submit" class="save-button">
+                <i class="fas fa-save"></i>
+                Save Changes
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Login Section (shown when not logged in) -->
+        <div id="login-container">
           <h2>Login</h2>
           <form id="login-form">
-            <label for="username-login">Username</label>
-            <input type="text" id="username-login" name="username" required />
+            <label for="login-username">Username</label>
+            <input type="text" id="login-username" name="username" required />
 
-            <label for="password-login">Password</label>
+            <label for="login-password">Password</label>
             <input
               type="password"
-              id="password-login"
+              id="login-password"
               name="password"
               required
             />
 
-            <button type="submit">Log In</button>
+            <button type="submit" class="login-button">
+              <i class="fas fa-sign-in-alt"></i>
+              Log In
+            </button>
           </form>
-          <p style="margin-top: 15px; text-align: center">
-            Don't have an account?
-            <a href="#" id="show-register-form">Create Account</a>
-          </p>
+
+          <div class="form-links">
+            <a href="#" id="create-account-link">
+              <i class="fas fa-user-plus"></i>
+              Create New Account
+            </a>
+          </div>
         </div>
 
-        <!-- Register форма (скриена по дифолт) -->
-        <div id="register-form-container" style="display: none">
+        <!-- Registration Section -->
+        <div id="register-container" style="display: none">
           <h2>Create Account</h2>
           <form id="register-form">
-            <label for="username-register">Username</label>
+            <label for="register-username">Username</label>
             <input
               type="text"
-              id="username-register"
+              id="register-username"
               name="username"
               required
             />
 
-            <label for="email-register">Email</label>
-            <input type="email" id="email-register" name="email" required />
+            <label for="register-email">Email</label>
+            <input type="email" id="register-email" name="email" required />
 
-            <label for="password-register">Password</label>
+            <label for="register-password">Password</label>
             <input
               type="password"
-              id="password-register"
+              id="register-password"
               name="password"
               required
             />
 
-            <label for="confirm-password-register">Confirm Password</label>
+            <label for="register-confirm-password">Confirm Password</label>
             <input
               type="password"
-              id="confirm-password-register"
+              id="register-confirm-password"
               name="confirmPassword"
               required
             />
 
-            <button type="submit">Register</button>
+            <button type="submit" class="register-button">
+              <i class="fas fa-user-plus"></i>
+              Create Account
+            </button>
           </form>
-          <p style="margin-top: 15px; text-align: center">
-            Already have an account?
-            <a href="#" id="show-login-form">Log In</a>
-          </p>
+
+          <div class="form-links">
+            <a href="#" id="back-to-login-link">
+              <i class="fas fa-sign-in-alt"></i>
+              Back to Log In
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -186,7 +321,7 @@
           positive change in communities across the region.
         </p>
         <div class="cta-group">
-          <a href="#join" class="cta-button">Join Our Cause</a>
+          <a href="#about" class="cta-button">Join Our Cause</a>
           <a href="#about" class="cta-secondary">Learn More</a>
         </div>
       </div>
@@ -240,6 +375,143 @@
         </div>
       </div>
     </section>
+    <!-- ================================================================================================================================ -->
+    <!-- ======================================================== OUR PROJECTS ======================================================== -->
+    <div class="container" id="projects">
+      <header class="page-header">
+        <div class="header-top">
+          <h1 data-translate="title">Our Projects</h1>
+        </div>
+        <p class="description" data-translate="description">
+          Explore our diverse projects and filter by category, status, and date
+          range.
+        </p>
+        <div class="underline"></div>
+      </header>
+
+      <main class="content-wrapper">
+        <aside class="filters-sidebar">
+          <h2 class="filters-title" data-translate="filters">Filters</h2>
+
+          <form class="filters-form" id="filterForm">
+            <div class="filter-group">
+              <label class="filter-legend" data-translate="category"
+                >Category</label
+              >
+              <select class="filter-select" id="category" name="category">
+                <option value="all" data-translate="allCategories">
+                  All Categories
+                </option>
+                <option value="Environment" data-translate="environment">
+                  Environment
+                </option>
+                <option value="Education" data-translate="education">
+                  Education
+                </option>
+                <option value="Healthcare" data-translate="healthcare">
+                  Healthcare
+                </option>
+                <option value="Infrastructure" data-translate="infrastructure">
+                  Infrastructure
+                </option>
+                <option value="Cultural" data-translate="cultural">
+                  Cultural
+                </option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label class="filter-legend" data-translate="status"
+                >Status</label
+              >
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input
+                    type="checkbox"
+                    class="filter-checkbox"
+                    name="status"
+                    value="Ongoing"
+                  />
+                  <span class="checkbox-text" data-translate="ongoing"
+                    >Ongoing</span
+                  >
+                </label>
+                <label class="checkbox-label">
+                  <input
+                    type="checkbox"
+                    class="filter-checkbox"
+                    name="status"
+                    value="Completed"
+                  />
+                  <span class="checkbox-text" data-translate="completed"
+                    >Completed</span
+                  >
+                </label>
+                <label class="checkbox-label">
+                  <input
+                    type="checkbox"
+                    class="filter-checkbox"
+                    name="status"
+                    value="Upcoming"
+                  />
+                  <span class="checkbox-text" data-translate="upcoming"
+                    >Upcoming</span
+                  >
+                </label>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <label class="filter-legend" data-translate="dateRange"
+                >Date Range</label
+              >
+              <div class="date-range-group">
+                <div class="date-input-group">
+                  <label
+                    class="date-label"
+                    for="startDate"
+                    data-translate="from"
+                    >From</label
+                  >
+                  <input
+                    type="date"
+                    class="date-input"
+                    id="startDate"
+                    name="startDate"
+                  />
+                </div>
+                <div class="date-input-group">
+                  <label class="date-label" for="endDate" data-translate="to"
+                    >To</label
+                  >
+                  <input
+                    type="date"
+                    class="date-input"
+                    id="endDate"
+                    name="endDate"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="apply-filters-btn"
+              id="applyFiltersBtn"
+              data-translate="applyFilters"
+            >
+              Apply Filters
+            </button>
+          </form>
+        </aside>
+
+        <section class="projects-section">
+          <div class="project-grid" id="projectGrid"></div>
+        </section>
+      </main>
+
+      <nav class="pagination-nav" id="pagination"></nav>
+    </div>
     <!-- ================================================================================================================================ -->
 
     <!-- ===================================================== OUR SUPPORTERS =========================================================== -->
@@ -455,10 +727,16 @@
       </section>
 
       <div id="lightbox" class="lightbox">
-        <span class="lightbox__close">&times;</span>
-        <img class="lightbox__image" src="" alt="Preview" />
-        <button class="lightbox__arrow lightbox__arrow--left">&#10094;</button>
-        <button class="lightbox__arrow lightbox__arrow--right">&#10095;</button>
+        <button class="lightbox__close">&times;</button>
+        <div class="lightbox__image-container">
+          <img class="lightbox__image" src="" alt="Preview" />
+          <button class="lightbox__arrow lightbox__arrow--left">
+            &#10094;
+          </button>
+          <button class="lightbox__arrow lightbox__arrow--right">
+            &#10095;
+          </button>
+        </div>
       </div>
       <!-- ================================================================================================================================ -->
 
@@ -596,12 +874,14 @@
           <div class="footer-links">
             <h3 class="footer-title">Quick Links</h3>
             <ul class="footer-link-list">
-              <li><a href="#" class="footer-link">Home</a></li>
-              <li><a href="#" class="footer-link">Mission & Vision</a></li>
-              <li><a href="#" class="footer-link">Projects</a></li>
-              <li><a href="#" class="footer-link">Gallery</a></li>
-              <li><a href="#" class="footer-link">Volunteer</a></li>
-              <li><a href="#" class="footer-link">Donate</a></li>
+              <li><a href="#home" class="footer-link">Home</a></li>
+              <li>
+                <a href="#missionvision-connect" class="footer-link"
+                  >Mission & Vision</a
+                >
+              </li>
+              <li><a href="#projects" class="footer-link">Projects</a></li>
+              <li><a href="#photogallery" class="footer-link">Gallery</a></li>
             </ul>
           </div>
 
@@ -678,5 +958,19 @@
 
       <!-- ================================================================================================================================ -->
     </main>
+    <script>
+      setTimeout(function () {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      }, 0);
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          window.scrollTo(0, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+        }, 0);
+      });
+    </script>
   </body>
 </html>
