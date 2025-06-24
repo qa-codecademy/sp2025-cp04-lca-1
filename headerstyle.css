@@ -158,11 +158,43 @@
   gap: 14px;
   margin-left: 20px;
   margin-top: -2px;
+<<<<<<< Updated upstream
+=======
+}
+
+.header-login-mobile {
+  display: none;
+>>>>>>> Stashed changes
 }
 
 @media (max-width: 768px) {
   .header-main-container {
     padding: 10px 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-logo {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .header-right-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-login-mobile {
+    display: flex !important;
+    align-items: center;
+    margin-right: 0;
+    order: unset;
+  }
+  .menu-icon {
+    display: flex;
+    order: unset;
+    margin-right: 10px;
   }
 
   .header-ul-items {
@@ -176,6 +208,7 @@
     left: 0;
     padding-bottom: 15px;
     border-top: 1px solid #ddd;
+    order: 3;
   }
 
   .header-ul-items.active {
@@ -203,9 +236,20 @@
     margin-top: 10px;
     gap: 15px;
   }
+}
 
-  .menu-icon {
-    display: flex;
+@media (min-width: 769px) {
+  .header-login-mobile {
+    display: none !important;
+  }
+
+  .header-ul-items {
+    justify-content: center;
+    flex: 1;
+  }
+
+  .header-main-container {
+    justify-content: space-between;
   }
 }
 
