@@ -13,12 +13,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px;
+  padding: 8px 40px;
   width: 100%;
 }
 
 .header-logo img {
-  width: 150px;
+  width: 140px;
   height: auto;
 }
 
@@ -45,6 +45,7 @@
   font-weight: 500;
   letter-spacing: 1px;
   transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 16px;
 }
 
 .header-nav-item a:hover {
@@ -64,8 +65,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -75,10 +76,31 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .header-language:hover {
   transform: scale(1.1);
+}
+
+/* Active flag styles */
+.header-language img.active-flag {
+  opacity: 0.8;
+  cursor: default;
+  transform: scale(1.05);
+  filter: grayscale(20%);
+}
+
+.header-language img:not(.active-flag) {
+  opacity: 1;
+  cursor: pointer;
+  filter: grayscale(0%);
+}
+
+.header-language img:not(.active-flag):hover {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: grayscale(0%);
 }
 
 .menu-icon {
@@ -135,11 +157,41 @@
   align-items: center;
   gap: 14px;
   margin-left: 20px;
+  margin-top: -2px;
+}
+
+.header-login-mobile {
+  display: none;
 }
 
 @media (max-width: 768px) {
   .header-main-container {
     padding: 10px 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-logo {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .header-right-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-login-mobile {
+    display: flex !important;
+    align-items: center;
+    margin-right: 0;
+    order: unset;
+  }
+  .menu-icon {
+    display: flex;
+    order: unset;
+    margin-right: 10px;
   }
 
   .header-ul-items {
@@ -153,6 +205,7 @@
     left: 0;
     padding-bottom: 15px;
     border-top: 1px solid #ddd;
+    order: 3;
   }
 
   .header-ul-items.active {
@@ -180,8 +233,77 @@
     margin-top: 10px;
     gap: 15px;
   }
+}
 
-  .menu-icon {
-    display: flex;
+@media (min-width: 769px) {
+  .header-login-mobile {
+    display: none !important;
   }
+
+  .header-ul-items {
+    justify-content: center;
+    flex: 1;
+  }
+
+  .header-main-container {
+    justify-content: space-between;
+  }
+}
+
+/* From Uiverse.io by reglobby */
+.user-profile {
+  width: 100px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-profile:hover,
+.user-profile:focus {
+  transform: scale(1.05);
+  outline: none;
+}
+
+.user-profile-inner {
+  width: 96px;
+  height: 32px;
+  border-radius: 6px;
+  background-color: #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 12px;
+  transition: 0.3s ease;
+  padding: 0 4px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.user-profile:hover .user-profile-inner {
+  background-color: #0056b3;
+}
+
+.user-profile-inner svg {
+  width: 13px;
+  height: 13px;
+  fill: #ffffff;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.user-profile-inner p {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
