@@ -10,10 +10,7 @@ const mainTranslations = {
       projects: "Projects",
       gallery: "Gallery",
       contact: "Contact",
-<<<<<<< Updated upstream
-=======
       loginBtn: "Log In",
->>>>>>> Stashed changes
     },
     login: {
       login: "Login",
@@ -41,10 +38,7 @@ const mainTranslations = {
       logout: "Logout",
       cyrillicError:
         "Username cannot contain Cyrillic characters. Please use Latin letters only.",
-<<<<<<< Updated upstream
-=======
       forgotPassword: "Forgot password?",
->>>>>>> Stashed changes
     },
     home: {
       title: "Empowering <br />Communities Through <br />Local Action",
@@ -102,21 +96,12 @@ const mainTranslations = {
     },
     faq: {
       title: "(FAQ) Frequently Asked Questions",
-<<<<<<< Updated upstream
-      q1: "What is your return policy?",
-      a1: "We offer returns within 14 days if the product is unused and in its original packaging.",
-      q2: "How long does delivery take?",
-      a2: "Delivery usually takes 3–5 business days within the country.",
-      q3: "Do you ship internationally?",
-      a3: "Yes, we ship internationally with additional shipping charges depending on the destination.",
-=======
       q1: "What are the main sources of funding?",
       a1: "Donations from individuals and local businesses who support our mission.",
       q2: "What does it take to become a member?",
       a2: "Attend an introductory meeting to understand our values and ongoing projects.",
       q3: "What are the key areas of operation?",
       a3: "Youth engagement and education – supporting youth initiatives, training, and cultural exchanges.",
->>>>>>> Stashed changes
     },
     contact: {
       title: "Let's Keep In Touch",
@@ -157,10 +142,7 @@ const mainTranslations = {
       projects: "Проекти",
       gallery: "Галерија",
       contact: "Контакт",
-<<<<<<< Updated upstream
-=======
       loginBtn: "Најави се",
->>>>>>> Stashed changes
     },
     login: {
       login: "Најава",
@@ -193,10 +175,7 @@ const mainTranslations = {
       accountUpdated: "Сметката е успешно ажурирана!",
       cyrillicError:
         "Корисничкото име не може да содржи кирилични карактери. Ве молиме користете само латинични букви.",
-<<<<<<< Updated upstream
-=======
       forgotPassword: "Ја заборавивте лозинката?",
->>>>>>> Stashed changes
     },
     home: {
       title: "Овозможуваме <br />заедници преку <br />локална акција",
@@ -253,15 +232,6 @@ const mainTranslations = {
       loadMore: "Вчитај повеќе",
     },
     faq: {
-<<<<<<< Updated upstream
-      title: "(ЧПП) Најчесто поставувани прашања",
-      q1: "Која е вашата политика за враќање?",
-      a1: "Нудиме враќање во рок од 14 дена доколку производот не е користен и е во оригинално пакување.",
-      q2: "Колку време трае испораката?",
-      a2: "Испораката обично трае 3–5 работни дена во земјата.",
-      q3: "Дали испорачувате интернационално?",
-      a3: "Да, испорачуваме интернационално со дополнителни трошоци за испорака во зависност од дестинацијата.",
-=======
       title: "Најчесто поставувани прашања",
       q1: "Кои се главните извори на финансирање?",
       a1: "Донации од поединци и локални бизниси кои ја поддржуваат нашата мисија.",
@@ -269,7 +239,6 @@ const mainTranslations = {
       a2: "Присуство на воведен состанок со цел запознавање со нашите вредности и тековни проекти.",
       q3: "Кои се клучните области на делување?",
       a3: "Вклучување и едукација на млади – поддршка на младински иницијативи, обуки и културни размени.",
->>>>>>> Stashed changes
     },
     contact: {
       title: "Останете во контакт",
@@ -332,21 +301,8 @@ const translationMap = [
     selector: ".header-nav-item:nth-child(5) a",
     key: "header.contact",
   },
-<<<<<<< Updated upstream
-
-  // Header Login Button
-  {
-    selector: ".header-language-wrapper-desktop .user-profile p",
-    key: "login.loginBtn",
-  },
-  {
-    selector: ".header-language-wrapper-mobile .user-profile p",
-    key: "login.loginBtn",
-  },
-=======
   // Header Login Button (desktop and mobile)
   { selector: ".user-profile-inner p", key: "header.loginBtn" },
->>>>>>> Stashed changes
 
   // Login Popup
   { selector: "#login-container h2", key: "login.login" },
@@ -675,8 +631,6 @@ function applyTranslations(lang) {
     }
   });
 
-<<<<<<< Updated upstream
-=======
   // Update login button immediately after translation
   if (typeof window.updateLoginButton === "function") {
     window.updateLoginButton();
@@ -685,7 +639,6 @@ function applyTranslations(lang) {
   // Apply journey translation
   applyJourneyTranslation(lang);
 
->>>>>>> Stashed changes
   console.log(`Translation completed for language: ${lang}`);
 }
 
@@ -726,15 +679,12 @@ function applyLoginTranslations(lang) {
     if (createAccountLink) {
       createAccountLink.innerHTML = `<i class="fas fa-user-plus"></i> ${mainTranslations[lang].login.createAccount}`;
     }
-<<<<<<< Updated upstream
-=======
     const forgotPasswordLink = loginContainer.querySelector(
       "#forgot-password-link"
     );
     if (forgotPasswordLink) {
       forgotPasswordLink.innerHTML = `<i class="fas fa-unlock-alt"></i> ${mainTranslations[lang].login.forgotPassword}`;
     }
->>>>>>> Stashed changes
   }
 
   // Register container translations
@@ -947,30 +897,16 @@ function showTranslatedMessage(messageType, lang = null) {
       messageElement = document.createElement("div");
       messageElement.className = "translated-message";
       messageElement.style.cssText = `
-<<<<<<< Updated upstream
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: #4CAF50;
-        color: white;
-        padding: 15px 20px;
-        border-radius: 5px;
-=======
         position: relative;
         margin: 12px auto 0 auto;
         background: #4CAF50;
         color: white;
         padding: 15px 32px;
         border-radius: 8px;
->>>>>>> Stashed changes
         z-index: 10000;
         font-weight: bold;
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         transition: all 0.3s ease;
-<<<<<<< Updated upstream
-      `;
-      document.body.appendChild(messageElement);
-=======
         text-align: center;
         max-width: 400px;
         font-size: 18px;
@@ -997,7 +933,6 @@ function showTranslatedMessage(messageType, lang = null) {
           document.body.insertBefore(messageElement, document.body.firstChild);
         }
       }
->>>>>>> Stashed changes
     }
 
     messageElement.textContent = message;
@@ -1172,23 +1107,13 @@ function setupLanguageSwitch() {
   if (mkFlagDesktop) {
     console.log("Adding click listener to MK desktop flag");
     mkFlagDesktop.addEventListener("click", () => {
-<<<<<<< Updated upstream
-      // Don't do anything if Macedonian is already selected
-=======
->>>>>>> Stashed changes
       if (window.currentLanguage === "mk") {
         return;
       }
       console.log("MK desktop flag clicked");
-<<<<<<< Updated upstream
-      applyTranslations("mk");
-      // Store language preference
-      localStorage.setItem("preferredLanguage", "mk");
-=======
       localStorage.setItem("preferredLanguage", "mk");
       applyTranslations("mk");
       window.dispatchEvent(new Event("languageChanged"));
->>>>>>> Stashed changes
       // Show language change message
       showLanguageChangeMessage("mk");
       // Update flag order
@@ -1201,23 +1126,13 @@ function setupLanguageSwitch() {
   if (enFlagDesktop) {
     console.log("Adding click listener to EN desktop flag");
     enFlagDesktop.addEventListener("click", () => {
-<<<<<<< Updated upstream
-      // Don't do anything if English is already selected
-=======
->>>>>>> Stashed changes
       if (window.currentLanguage === "en") {
         return;
       }
       console.log("EN desktop flag clicked");
-<<<<<<< Updated upstream
-      applyTranslations("en");
-      // Store language preference
-      localStorage.setItem("preferredLanguage", "en");
-=======
       localStorage.setItem("preferredLanguage", "en");
       applyTranslations("en");
       window.dispatchEvent(new Event("languageChanged"));
->>>>>>> Stashed changes
       // Show language change message
       showLanguageChangeMessage("en");
       // Update flag order
@@ -1231,23 +1146,13 @@ function setupLanguageSwitch() {
   if (mkFlagMobile) {
     console.log("Adding click listener to MK mobile flag");
     mkFlagMobile.addEventListener("click", () => {
-<<<<<<< Updated upstream
-      // Don't do anything if Macedonian is already selected
-=======
->>>>>>> Stashed changes
       if (window.currentLanguage === "mk") {
         return;
       }
       console.log("MK mobile flag clicked");
-<<<<<<< Updated upstream
-      applyTranslations("mk");
-      // Store language preference
-      localStorage.setItem("preferredLanguage", "mk");
-=======
       localStorage.setItem("preferredLanguage", "mk");
       applyTranslations("mk");
       window.dispatchEvent(new Event("languageChanged"));
->>>>>>> Stashed changes
       // Show language change message
       showLanguageChangeMessage("mk");
       // Update flag order
@@ -1260,23 +1165,13 @@ function setupLanguageSwitch() {
   if (enFlagMobile) {
     console.log("Adding click listener to EN mobile flag");
     enFlagMobile.addEventListener("click", () => {
-<<<<<<< Updated upstream
-      // Don't do anything if English is already selected
-=======
->>>>>>> Stashed changes
       if (window.currentLanguage === "en") {
         return;
       }
       console.log("EN mobile flag clicked");
-<<<<<<< Updated upstream
-      applyTranslations("en");
-      // Store language preference
-      localStorage.setItem("preferredLanguage", "en");
-=======
       localStorage.setItem("preferredLanguage", "en");
       applyTranslations("en");
       window.dispatchEvent(new Event("languageChanged"));
->>>>>>> Stashed changes
       // Show language change message
       showLanguageChangeMessage("en");
       // Update flag order
@@ -1289,8 +1184,6 @@ function setupLanguageSwitch() {
   console.log("Language switch setup completed");
 }
 
-<<<<<<< Updated upstream
-=======
 function applyJourneyTranslation(lang) {
   const journeyList = document.querySelector(".journey-timeline");
   if (!journeyList) return;
@@ -1315,7 +1208,6 @@ function applyJourneyTranslation(lang) {
   });
 }
 
->>>>>>> Stashed changes
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM Content Loaded - translate.js script loaded");
 
@@ -1424,10 +1316,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (storedLanguage) {
     console.log(`Applying stored language: ${storedLanguage}`);
     applyTranslations(storedLanguage);
-<<<<<<< Updated upstream
-=======
     window.dispatchEvent(new Event("languageChanged"));
->>>>>>> Stashed changes
     // Update flag order based on stored language
     updateFlagOrder(storedLanguage);
     // Update flag visual state based on stored language
@@ -1436,10 +1325,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Default to English if no preference is stored
     console.log("No stored language preference, defaulting to English");
     applyTranslations("en");
-<<<<<<< Updated upstream
-=======
     window.dispatchEvent(new Event("languageChanged"));
->>>>>>> Stashed changes
     // Update flag order for default language
     updateFlagOrder("en");
     // Update flag visual state for default language
