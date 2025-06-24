@@ -82,13 +82,6 @@ function validateRegistration(username, email, password, confirmPassword) {
   return { valid: true };
 }
 
-<<<<<<< Updated upstream
-// Register new user
-function registerUser(username, email, password) {
-  const users = loadUsers();
-
-  // Check if username already exists (case-insensitive)
-=======
 // Add default admin account if not present
 function ensureAdminAccount() {
   const users = loadUsers();
@@ -145,43 +138,23 @@ ensureAdminAccount();
 // Register new user
 function registerUser(username, email, password) {
   const users = loadUsers();
->>>>>>> Stashed changes
   if (
     users.find((user) => user.username.toLowerCase() === username.toLowerCase())
   ) {
     return { success: false, message: getTranslatedMessage("usernameExists") };
   }
-<<<<<<< Updated upstream
-
-  // Check if email already exists (case-insensitive)
   if (users.find((user) => user.email.toLowerCase() === email.toLowerCase())) {
     return { success: false, message: getTranslatedMessage("emailRegistered") };
   }
-
-  // Create new user
-=======
-  if (users.find((user) => user.email.toLowerCase() === email.toLowerCase())) {
-    return { success: false, message: getTranslatedMessage("emailRegistered") };
-  }
->>>>>>> Stashed changes
   const newUser = {
     id: Date.now().toString(),
     username: username,
     email: email,
     password: hashPassword(password),
-<<<<<<< Updated upstream
-    createdAt: new Date().toISOString(),
-  };
-
-  users.push(newUser);
-
-  // Save to localStorage
-=======
     role: "Member", // Always member, only ensureAdminAccount can set admin
     createdAt: new Date().toISOString(),
   };
   users.push(newUser);
->>>>>>> Stashed changes
   const saved = saveUsers(users);
   if (saved) {
     return {
@@ -190,10 +163,7 @@ function registerUser(username, email, password) {
         id: newUser.id,
         username: newUser.username,
         email: newUser.email,
-<<<<<<< Updated upstream
-=======
         role: newUser.role,
->>>>>>> Stashed changes
         createdAt: newUser.createdAt,
       },
     };
@@ -221,15 +191,11 @@ function loginUser(username, password) {
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
     closeLoginPopup();
     checkLoginStatus();
-<<<<<<< Updated upstream
-    showMessage(getTranslatedMessage("loginSuccess"), true);
-=======
     if (window.showTranslatedMessage) {
       showMessage(getTranslatedMessage("loginSuccess"), true);
     } else {
       showMessage(getTranslatedMessage("loginSuccess"), true);
     }
->>>>>>> Stashed changes
   } else {
     showMessage(getTranslatedMessage("invalidCredentials"), false);
   }
@@ -245,13 +211,6 @@ function logoutUser() {
 // Update login button text based on login status
 function updateLoginButton() {
   const loginButtons = document.querySelectorAll(".user-profile-inner p");
-<<<<<<< Updated upstream
-  loginButtons.forEach((button) => {
-    if (currentUser) {
-      button.textContent = currentUser.username;
-    } else {
-      button.textContent = "Log In";
-=======
   // Always use preferredLanguage from localStorage, fallback to 'en'
   let lang = (localStorage.getItem("preferredLanguage") || "en").toLowerCase();
   let loginText =
@@ -279,7 +238,6 @@ function updateLoginButton() {
       button.textContent = user.username;
     } else {
       button.textContent = loginText;
->>>>>>> Stashed changes
     }
   });
 }
@@ -327,11 +285,7 @@ const loginBtnDesktop = document.querySelector(
   ".header-language-wrapper-desktop .user-profile"
 );
 const loginBtnMobile = document.querySelector(
-<<<<<<< Updated upstream
-  ".header-language-wrapper-mobile .user-profile"
-=======
   ".header-login-mobile.user-profile"
->>>>>>> Stashed changes
 );
 const loginPopup = document.getElementById("login-popup");
 const loginCloseBtn = document.getElementById("login-close-btn");
@@ -340,10 +294,6 @@ const loginCloseBtn = document.getElementById("login-close-btn");
 function openLoginPopup() {
   console.log("Opening login popup");
   loginPopup.classList.add("active");
-<<<<<<< Updated upstream
-  // Check login status to show appropriate content
-  checkLoginStatus();
-=======
   // Always show only login form and hide others
   document.getElementById("login-container").style.display = "block";
   document.getElementById("register-container").style.display = "none";
@@ -361,7 +311,6 @@ function openLoginPopup() {
   if (forgotForm) forgotForm.reset();
   const forgotMsg = document.getElementById("forgot-password-message");
   if (forgotMsg) forgotMsg.textContent = "";
->>>>>>> Stashed changes
 }
 
 function closeLoginPopup() {
@@ -370,25 +319,6 @@ function closeLoginPopup() {
 }
 
 // Event listeners for popup
-<<<<<<< Updated upstream
-loginBtnDesktop.addEventListener("click", function (e) {
-  console.log("Desktop login button clicked");
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  if (!currentUser) {
-    openLoginPopup();
-  }
-  // If user is logged in, dropdown will be handled by setupDropdownHandlers
-});
-
-loginBtnMobile.addEventListener("click", function (e) {
-  console.log("Mobile login button clicked");
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  if (!currentUser) {
-    openLoginPopup();
-  }
-  // If user is logged in, dropdown will be handled by setupDropdownHandlers
-});
-=======
 if (loginBtnDesktop) {
   loginBtnDesktop.addEventListener("click", function (e) {
     console.log("Desktop login button clicked");
@@ -409,7 +339,6 @@ if (loginBtnMobile) {
     // If user is logged in, dropdown will be handled by setupDropdownHandlers
   });
 }
->>>>>>> Stashed changes
 
 loginCloseBtn.addEventListener("click", closeLoginPopup);
 
@@ -424,76 +353,6 @@ const createAccountLink = document.getElementById("create-account-link");
 const backToLoginLink = document.getElementById("back-to-login-link");
 
 createAccountLink.addEventListener("click", (e) => {
-<<<<<<< Updated upstream
-  e.preventDefault();
-  console.log("Create account link clicked");
-  document.getElementById("login-container").style.display = "none";
-  document.getElementById("register-container").style.display = "block";
-});
-
-backToLoginLink.addEventListener("click", (e) => {
-  e.preventDefault();
-  console.log("Back to login link clicked");
-  document.getElementById("register-container").style.display = "none";
-  document.getElementById("login-container").style.display = "block";
-});
-
-// Login form submission
-document.getElementById("login-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const username = this.username.value.trim();
-  const password = this.password.value;
-
-  if (!username || !password) {
-    showMessage(getTranslatedMessage("fillAllFields"), false);
-    return;
-  }
-
-  // Check for Cyrillic characters in username
-  if (/[а-шА-Ш]/.test(username)) {
-    showMessage(getCyrillicErrorMessage(), false);
-    return;
-  }
-
-  // Check for Cyrillic characters in password
-  if (/[а-шА-Ш]/.test(password)) {
-    showMessage(getCyrillicErrorMessage(), false);
-    return;
-  }
-
-  // Find user by username (case-insensitive)
-  const users = loadUsers();
-  const hashedPassword = hashPassword(password);
-  const user = users.find(
-    (u) =>
-      u.username.toLowerCase() === username.toLowerCase() &&
-      u.password === hashedPassword
-  );
-
-  if (user) {
-    currentUser = {
-      id: user.id,
-      username: user.username,
-      email: user.email,
-      createdAt: user.createdAt,
-    };
-    localStorage.setItem("currentUser", JSON.stringify(currentUser));
-    closeLoginPopup();
-    checkLoginStatus();
-    // Use translated message
-    if (window.showTranslatedMessage) {
-      window.showTranslatedMessage("loginSuccess");
-    } else {
-      showMessage(getTranslatedMessage("loginSuccess"), true);
-    }
-  } else {
-    showMessage(getTranslatedMessage("invalidCredentials"), false);
-  }
-});
-
-// Register form submission
-=======
   e.preventDefault();
   console.log("Create account link clicked");
   document.getElementById("login-container").style.display = "none";
@@ -891,7 +750,6 @@ document.getElementById("back-btn").addEventListener("click", function () {
 });
 
 // Add cancel edit functionality
->>>>>>> Stashed changes
 document
   .getElementById("cancel-edit-btn")
   .addEventListener("click", function () {
@@ -904,261 +762,6 @@ document
   .addEventListener("submit", function (e) {
     e.preventDefault();
 
-<<<<<<< Updated upstream
-    const username = this.username.value.trim();
-    const email = this.email.value.trim();
-    const password = this.password.value;
-    const confirmPassword = this.confirmPassword.value;
-
-    // Validate input
-    const validation = validateRegistration(
-      username,
-      email,
-      password,
-      confirmPassword
-    );
-    if (!validation.valid) {
-      showMessage(validation.message, false);
-      return;
-    }
-
-    const result = registerUser(username, email, password);
-
-    if (result.success) {
-      // Log in the user immediately after registration
-      localStorage.setItem("currentUser", JSON.stringify(result.user));
-      closeLoginPopup();
-      checkLoginStatus();
-      showMessage(getTranslatedMessage("registrationSuccess"), true);
-    } else {
-      showMessage(result.message, false);
-    }
-  });
-
-// Initialize on page load
-document.addEventListener("DOMContentLoaded", () => {
-  // Check if user is already logged in
-  const savedUser = localStorage.getItem("currentUser");
-  if (savedUser) {
-    currentUser = JSON.parse(savedUser);
-    updateLoginButton();
-  }
-
-  // Check if user is logged in on page load
-  checkLoginStatus();
-  setupDropdownHandlers();
-});
-
-function setupDropdownHandlers() {
-  const userProfiles = document.querySelectorAll(".user-profile");
-  const userDropdown = document.getElementById("user-dropdown");
-  const yourAccountBtn = document.getElementById("your-account-btn");
-  const headerLogoutBtn = document.getElementById("header-logout-btn");
-
-  // Toggle dropdown when clicking on user profile
-  userProfiles.forEach((userProfile) => {
-    userProfile.addEventListener("click", function (e) {
-      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-      if (currentUser) {
-        e.preventDefault();
-        e.stopPropagation();
-        userDropdown.style.display =
-          userDropdown.style.display === "none" ? "block" : "none";
-      }
-    });
-  });
-
-  // Close dropdown when clicking outside
-  document.addEventListener("click", function (e) {
-    const clickedOnProfile = Array.from(userProfiles).some((profile) =>
-      profile.contains(e.target)
-    );
-    if (!clickedOnProfile) {
-      userDropdown.style.display = "none";
-    }
-  });
-
-  // Your Account button - opens the login popup with profile
-  yourAccountBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    userDropdown.style.display = "none";
-    openLoginPopup();
-  });
-
-  // Header Logout button
-  headerLogoutBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    userDropdown.style.display = "none";
-    logout();
-  });
-}
-
-function checkLoginStatus() {
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  const loginButtons = document.querySelectorAll(".user-profile-inner p");
-  const userDropdown = document.getElementById("user-dropdown");
-
-  if (currentUser) {
-    // User is logged in - show profile
-    showUserProfile(currentUser);
-    loginButtons.forEach((btn) => {
-      btn.textContent = currentUser.username;
-    });
-    // Show dropdown functionality
-    userDropdown.style.display = "none"; // Hidden by default, shows on click
-  } else {
-    // User is not logged in - show login form
-    showLoginForm();
-    loginButtons.forEach((btn) => {
-      btn.textContent = "Log In";
-    });
-    // Hide dropdown
-    userDropdown.style.display = "none";
-  }
-}
-
-function showUserProfile(user) {
-  // Hide login/register forms
-  document.getElementById("login-container").style.display = "none";
-  document.getElementById("register-container").style.display = "none";
-  document.getElementById("edit-account-container").style.display = "none";
-
-  // Show user profile
-  document.getElementById("user-profile-container").style.display = "block";
-
-  // Populate user details
-  document.getElementById("profile-username").textContent = user.username;
-  document.getElementById("profile-email").textContent = user.email;
-  document.getElementById("profile-date").textContent = new Date(
-    user.createdAt
-  ).toLocaleDateString();
-}
-
-function showLoginForm() {
-  // Hide other containers
-  document.getElementById("login-container").style.display = "block";
-  document.getElementById("register-container").style.display = "none";
-  document.getElementById("user-profile-container").style.display = "none";
-  document.getElementById("edit-account-container").style.display = "none";
-}
-
-// Add back button functionality
-document.getElementById("back-btn").addEventListener("click", function () {
-  showEditAccountForm();
-});
-
-// Add cancel edit functionality
-document
-  .getElementById("cancel-edit-btn")
-  .addEventListener("click", function () {
-    showUserProfile(JSON.parse(localStorage.getItem("currentUser")));
-  });
-
-// Add edit account form submission
-document
-  .getElementById("edit-account-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const email = this.email.value.trim();
-    const currentPassword = this.currentPassword.value;
-    const newPassword = this.password.value;
-    const confirmPassword = this.confirmPassword.value;
-
-    // Get current user data
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    if (!currentUser) {
-      showMessage(getTranslatedMessage("noUserLoggedIn"), false);
-      return;
-    }
-
-    // Check if form is empty (no changes made)
-    const isEmailEmpty = !email || email.trim() === "";
-    const isCurrentPasswordEmpty =
-      !currentPassword || currentPassword.trim() === "";
-    const isNewPasswordEmpty = !newPassword || newPassword.trim() === "";
-    const isConfirmPasswordEmpty =
-      !confirmPassword || confirmPassword.trim() === "";
-
-    // If all fields are empty, show error message
-    if (
-      isEmailEmpty &&
-      isCurrentPasswordEmpty &&
-      isNewPasswordEmpty &&
-      isConfirmPasswordEmpty
-    ) {
-      showMessage(getTranslatedMessage("fillOneField"), false);
-      return;
-    }
-
-    // If email field is empty, use current email
-    const emailToUse = isEmailEmpty ? currentUser.email : email;
-
-    // Validate email if provided
-    if (!isEmailEmpty) {
-      // Check for Cyrillic characters in email
-      if (/[а-шА-Ш]/.test(email)) {
-        showMessage(getTranslatedMessage("emailCyrillic"), false);
-        return;
-      }
-    }
-
-    // Check if user wants to change password
-    if (
-      !isCurrentPasswordEmpty ||
-      !isNewPasswordEmpty ||
-      !isConfirmPasswordEmpty
-    ) {
-      // All password fields must be filled
-      if (
-        isCurrentPasswordEmpty ||
-        isNewPasswordEmpty ||
-        isConfirmPasswordEmpty
-      ) {
-        showMessage(getTranslatedMessage("allPasswordFieldsRequired"), false);
-        return;
-      }
-
-      // Check for Cyrillic characters in current password
-      if (/[а-шА-Ш]/.test(currentPassword)) {
-        showMessage(
-          "Current password cannot contain Cyrillic characters. Please use Latin letters only.",
-          false
-        );
-        return;
-      }
-
-      // Check for Cyrillic characters in new password
-      if (/[а-шА-Ш]/.test(newPassword)) {
-        showMessage(getTranslatedMessage("newPasswordCyrillic"), false);
-        return;
-      }
-
-      if (newPassword !== confirmPassword) {
-        showMessage(getTranslatedMessage("passwordsDontMatch"), false);
-        return;
-      }
-
-      if (newPassword.length < 6) {
-        showMessage(getTranslatedMessage("passwordTooShort"), false);
-        return;
-      }
-    }
-
-    // Update user account
-    const result = updateUserAccount(emailToUse, currentPassword, newPassword);
-
-    if (result.success) {
-      showMessage(getTranslatedMessage("accountUpdated"), true);
-      showUserProfile(result.user);
-    } else {
-      showMessage(result.message, false);
-    }
-  });
-
-=======
     // Always read fields by ID for robustness
     const email = this.querySelector("#edit-email").value.trim();
     const currentPassword = this.querySelector("#current-password").value;
@@ -1286,7 +889,6 @@ document
     showUserProfile(updatedUser);
   });
 
->>>>>>> Stashed changes
 function showEditAccountForm() {
   // Hide other containers
   document.getElementById("login-container").style.display = "none";
@@ -1306,95 +908,6 @@ function showEditAccountForm() {
   }
 }
 
-<<<<<<< Updated upstream
-function updateUserAccount(email, currentPassword, newPassword) {
-  const users = loadUsers();
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
-  console.log("Current user:", currentUser);
-  console.log("All users:", users);
-
-  if (!currentUser) {
-    return { success: false, message: getTranslatedMessage("noUserLoggedIn") };
-  }
-
-  // Find current user in users array
-  const userIndex = users.findIndex((user) => {
-    console.log(
-      "Comparing user.id:",
-      user.id,
-      "with currentUser.id:",
-      currentUser.id
-    );
-    console.log(
-      "Types - user.id:",
-      typeof user.id,
-      "currentUser.id:",
-      typeof currentUser.id
-    );
-    return user.id === currentUser.id;
-  });
-
-  console.log("User index found:", userIndex);
-
-  if (userIndex === -1) {
-    return { success: false, message: getTranslatedMessage("userNotFound") };
-  }
-
-  // Check if email is already taken by another user (case-insensitive)
-  const emailExists = users.find(
-    (user) =>
-      user.email.toLowerCase() === email.toLowerCase() &&
-      user.id !== currentUser.id
-  );
-
-  if (emailExists) {
-    return {
-      success: false,
-      message: getTranslatedMessage("emailAlreadyRegistered"),
-    };
-  }
-
-  // If changing password, verify current password
-  if (currentPassword && newPassword) {
-    const hashedCurrentPassword = hashPassword(currentPassword);
-    if (users[userIndex].password !== hashedCurrentPassword) {
-      return {
-        success: false,
-        message: getTranslatedMessage("currentPasswordIncorrect"),
-      };
-    }
-  }
-
-  // Update user data
-  users[userIndex].email = email;
-
-  if (newPassword) {
-    users[userIndex].password = hashPassword(newPassword);
-  }
-
-  // Save updated users
-  const saved = saveUsers(users);
-  if (!saved) {
-    return {
-      success: false,
-      message: getTranslatedMessage("errorSavingChanges"),
-    };
-  }
-
-  // Update current user in localStorage
-  const updatedUser = {
-    ...currentUser,
-    email: email,
-  };
-
-  localStorage.setItem("currentUser", JSON.stringify(updatedUser));
-
-  return { success: true, user: updatedUser };
-}
-
-=======
->>>>>>> Stashed changes
 function logout() {
   // Clear current user from localStorage
   localStorage.removeItem("currentUser");
@@ -1404,10 +917,7 @@ function logout() {
 
   // Update UI
   checkLoginStatus();
-<<<<<<< Updated upstream
-=======
   updateLoginButton();
->>>>>>> Stashed changes
 
   // Show success message
   showMessage(getTranslatedMessage("logoutSuccess"), true);
@@ -1457,14 +967,11 @@ function getTranslatedMessage(key) {
         "All password fields must be filled to change password.",
       newPasswordCyrillic:
         "New password cannot contain Cyrillic characters. Please use Latin letters only.",
-<<<<<<< Updated upstream
-=======
       resetLinkSent: "A reset link has been sent to your email.",
       forgotPasswordTitle: "Forgot Password",
       forgotPasswordEmail: "Email",
       forgotPasswordButton: "Send Reset Link",
       forgotPasswordBack: "Back to Log In",
->>>>>>> Stashed changes
     },
     mk: {
       fillAllFields: "Ве молиме пополнете ги сите полиња.",
@@ -1497,20 +1004,15 @@ function getTranslatedMessage(key) {
         "За да промените лозинката, морате да пополните сите полиња за лозинка.",
       newPasswordCyrillic:
         "Новата лозинка не може да содржи кирилични карактери. Ве молиме користете само латинични букви.",
-<<<<<<< Updated upstream
-=======
       resetLinkSent: "Линк за ресетирање е испратен на вашата е-пошта.",
       forgotPasswordTitle: "Заборавена лозинка",
       forgotPasswordEmail: "Е-пошта",
       forgotPasswordButton: "Испрати линк за ресетирање",
       forgotPasswordBack: "Назад на најава",
->>>>>>> Stashed changes
     },
   };
   return messages[currentLang][key] || messages.en[key] || key;
 }
-<<<<<<< Updated upstream
-=======
 
 // Listen for language change events and update login button accordingly
 window.addEventListener("languageChanged", function () {
@@ -1554,4 +1056,3 @@ function applyForgotPasswordTranslations() {
 window.addEventListener("languageChanged", function () {
   applyForgotPasswordTranslations();
 });
->>>>>>> Stashed changes

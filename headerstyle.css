@@ -158,13 +158,10 @@
   gap: 14px;
   margin-left: 20px;
   margin-top: -2px;
-<<<<<<< Updated upstream
-=======
 }
 
 .header-login-mobile {
   display: none;
->>>>>>> Stashed changes
 }
 
 @media (max-width: 768px) {
