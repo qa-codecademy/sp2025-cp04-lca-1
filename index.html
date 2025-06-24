@@ -53,13 +53,35 @@
             <img src="header-images/logopng.png" alt="Logo" />
           </a>
         </div>
-
-        <div class="menu-icon" id="menu-icon">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+        <div class="header-right-mobile">
+          <div
+            class="header-login-mobile user-profile"
+            aria-label="User Login Button"
+            tabindex="0"
+            role="button"
+            style="display: none"
+          >
+            <div class="user-profile-inner">
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <g data-name="Layer 2" id="Layer_2">
+                  <path
+                    d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"
+                  ></path>
+                </g>
+              </svg>
+              <p>Log In</p>
+            </div>
+          </div>
+          <div class="menu-icon" id="menu-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
         </div>
-
         <ul class="header-ul-items" id="menu">
           <li class="header-nav-item"><a href="#home">Home</a></li>
           <li class="header-nav-item">
@@ -70,8 +92,7 @@
           <li class="header-nav-item">
             <a href="#faq&from-connect">Contact</a>
           </li>
-
-          <!-- Мобилна верзија: знамињата и логин копчето внатре во менито -->
+          <!-- Мобилна верзија: само знамињата внатре во менито -->
           <li class="header-language-wrapper-mobile">
             <div class="header-language">
               <img
@@ -87,6 +108,7 @@
                 data-lang="en"
               />
             </div>
+<<<<<<< Updated upstream
             <div
               aria-label="User Login Button"
               tabindex="0"
@@ -108,6 +130,8 @@
                 <p>Log In</p>
               </div>
             </div>
+=======
+>>>>>>> Stashed changes
           </li>
         </ul>
 
@@ -251,11 +275,40 @@
             </button>
           </form>
 
+<<<<<<< Updated upstream
           <div class="form-links">
+=======
+          <div
+            class="form-links"
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 0;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+            "
+          >
+>>>>>>> Stashed changes
             <a href="#" id="create-account-link">
               <i class="fas fa-user-plus"></i>
               Create New Account
             </a>
+<<<<<<< Updated upstream
+=======
+            <a
+              href="#"
+              id="forgot-password-link"
+              style="
+                color: #007bff;
+                text-decoration: underline;
+                margin-top: 6px;
+              "
+            >
+              <i class="fas fa-unlock-alt"></i>
+              Forgot password?
+            </a>
+>>>>>>> Stashed changes
           </div>
         </div>
 
@@ -294,6 +347,7 @@
               <i class="fas fa-user-plus"></i>
               Create Account
             </button>
+<<<<<<< Updated upstream
           </form>
 
           <div class="form-links">
@@ -302,6 +356,76 @@
               Back to Log In
             </a>
           </div>
+=======
+          </form>
+
+          <div class="form-links">
+            <a href="#" id="back-to-login-link">
+              <i class="fas fa-sign-in-alt"></i>
+              Back to Log In
+            </a>
+          </div>
+        </div>
+
+        <!-- Forgot Password Section -->
+        <div id="forgot-password-container" style="display: none">
+          <h2>Forgot Password</h2>
+          <form id="forgot-password-form">
+            <label for="forgot-password-email">Email</label>
+            <input
+              type="email"
+              id="forgot-password-email"
+              name="email"
+              required
+            />
+            <button type="submit" class="register-button">
+              <i class="fas fa-unlock-alt"></i>
+              Send Reset Link
+            </button>
+            <div id="forgot-password-message"></div>
+          </form>
+          <div class="form-links">
+            <a href="#" id="back-to-login-link-forgot">
+              <i class="fas fa-sign-in-alt"></i>
+              Back to Log In
+            </a>
+          </div>
+        </div>
+        <!-- Reset Password Section (integrated from reset-password.html) -->
+        <div id="reset-password-container" style="display: none">
+          <h2>Reset Password</h2>
+          <form id="reset-password-form">
+            <label for="reset-password-email">Email</label>
+            <input
+              type="email"
+              id="reset-password-email"
+              name="email"
+              required
+            />
+
+            <label for="reset-password-new">New Password</label>
+            <input
+              type="password"
+              id="reset-password-new"
+              name="password"
+              required
+            />
+
+            <label for="reset-password-confirm">Confirm New Password</label>
+            <input
+              type="password"
+              id="reset-password-confirm"
+              name="confirmPassword"
+              required
+            />
+
+            <button type="submit" class="register-button">
+              <i class="fas fa-save"></i>
+              Reset Password
+            </button>
+            <div id="reset-password-message"></div>
+          </form>
+>>>>>>> Stashed changes
         </div>
       </div>
     </div>
@@ -322,7 +446,10 @@
         </p>
         <div class="cta-group">
           <a href="#about" class="cta-button">Join Our Cause</a>
+<<<<<<< Updated upstream
           <a href="#about" class="cta-secondary">Learn More</a>
+=======
+>>>>>>> Stashed changes
         </div>
       </div>
     </main>
@@ -748,38 +875,39 @@
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>What is your return policy?</span>
+              <span>What are the main sources of funding?</span>
               <i class="fas fa-chevron-down arrow-icon"></i>
             </button>
             <div class="faq-answer">
               <p>
-                We offer returns within 14 days if the product is unused and in
-                its original packaging.
+                Donations from individuals and local businesses who support our
+                mission.
               </p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>How long does delivery take?</span>
+              <span>What does it take to become a member?</span>
               <i class="fas fa-chevron-down arrow-icon"></i>
             </button>
             <div class="faq-answer">
               <p>
-                Delivery usually takes 3–5 business days within the country.
+                Attend an introductory meeting to understand our values and
+                ongoing projects.
               </p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>Do you ship internationally?</span>
+              <span>What are the key areas of operation?</span>
               <i class="fas fa-chevron-down arrow-icon"></i>
             </button>
             <div class="faq-answer">
               <p>
-                Yes, we ship internationally with additional shipping charges
-                depending on the destination.
+                Youth engagement and education – supporting youth initiatives,
+                training, and cultural exchanges.
               </p>
             </div>
           </div>

@@ -115,7 +115,11 @@
   line-height: 1;
   color: #6c757d;
   cursor: pointer;
+<<<<<<< Updated upstream
   transition: all 0.3s ease;
+=======
+  /* transition: all 0.3s ease; */
+>>>>>>> Stashed changes
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -124,11 +128,19 @@
   justify-content: center;
 }
 
+<<<<<<< Updated upstream
 .login-close-btn:hover {
   color: #dc3545;
   background-color: #f8f9fa;
   transform: rotate(90deg);
 }
+=======
+/* .login-close-btn:hover {
+  color: #dc3545;
+  background-color: #f8f9fa;
+  transform: rotate(90deg);
+} */
+>>>>>>> Stashed changes
 
 /* ============================================================= USER PROFILE SECTION ============================================================= */
 
