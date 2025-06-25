@@ -45,8 +45,6 @@ const mainTranslations = {
       desc: "We bring people together to create sustainable development and positive change in communities across the region.",
       join: "Join Our Cause",
       learn: "Learn More",
-<<<<<<< Updated upstream
-=======
       volunteerInfo: {
         title: "Volunteer Opportunities",
         subtitle: "Make a difference in your community",
@@ -80,7 +78,6 @@ const mainTranslations = {
         ],
         close: "Close",
       },
->>>>>>> Stashed changes
     },
     mission: {
       section: "Mission & Vision",
@@ -218,8 +215,6 @@ const mainTranslations = {
       desc: "Ги обединуваеме луѓето за да создадеме одржлив развој и позитивни промени во заедниците низ регионот.",
       join: "Придружи се",
       learn: "Дознај повеќе",
-<<<<<<< Updated upstream
-=======
       volunteerInfo: {
         title: "Волонтерски Можности",
         subtitle: "Направете разлика во вашата заедница",
@@ -253,7 +248,6 @@ const mainTranslations = {
         ],
         close: "Затвори",
       },
->>>>>>> Stashed changes
     },
     mission: {
       section: "Мисија и Визија",

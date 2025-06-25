@@ -591,16 +591,6 @@ let currentLanguage = "en";
 
 // Function to change language
 function changeLanguage(lang) {
-<<<<<<< Updated upstream
-  currentLanguage = lang;
-
-  // Update flag active states
-  document
-    .querySelectorAll(".header-language img[data-lang]")
-    .forEach((flag) => {
-      flag.classList.remove("active");
-    });
-=======
   // Update global language
   window.currentLanguage = lang;
 
@@ -608,36 +598,10 @@ function changeLanguage(lang) {
   document
     .querySelectorAll(".header-language img")
     .forEach((flag) => flag.classList.remove("active"));
->>>>>>> Stashed changes
   document
     .querySelector(`.header-language img[data-lang="${lang}"]`)
     .classList.add("active");
 
-<<<<<<< Updated upstream
-  // Update HTML lang attribute
-  document.documentElement.lang = lang;
-
-  // Update all translatable elements
-  document.querySelectorAll("[data-translate]").forEach((element) => {
-    const key = element.getAttribute("data-translate");
-    if (translations[lang][key]) {
-      element.textContent = translations[lang][key];
-    }
-  });
-
-  // Update select options
-  const categorySelect = document.getElementById("category");
-  if (categorySelect) {
-    Array.from(categorySelect.options).forEach((option) => {
-      const key = option.getAttribute("data-translate");
-      if (key && translations[lang][key]) {
-        option.textContent = translations[lang][key];
-      }
-    });
-  }
-
-  // Re-render projects to update dynamic content
-=======
   // Update all translatable elements
   document.querySelectorAll("[data-translate]").forEach((element) => {
     const key = element.getAttribute("data-translate");
@@ -651,7 +615,6 @@ function changeLanguage(lang) {
   });
 
   // Re-render projects with new language
->>>>>>> Stashed changes
   applyFilters(false);
 }
 
@@ -1476,53 +1439,6 @@ const projects = [
 ];
 
 function formatDate(dateString) {
-<<<<<<< Updated upstream
-  const options = { year: "numeric", month: "long", day: "numeric" };
-  const dateObj = new Date(dateString);
-
-  if (currentLanguage === "mk") {
-    // Macedonian date formatting
-    const months = [
-      "јануари",
-      "февруари",
-      "март",
-      "април",
-      "мај",
-      "јуни",
-      "јули",
-      "август",
-      "септември",
-      "октомври",
-      "ноември",
-      "декември",
-    ];
-    const month = months[dateObj.getMonth()];
-    const day = dateObj.getDate();
-    const year = dateObj.getFullYear();
-    return `${day} ${month} ${year}`;
-  } else {
-    // English date formatting
-    return dateObj.toLocaleDateString("en-US", options);
-  }
-}
-
-function getStatusDateText(project) {
-  const status = project.status.toLowerCase();
-  if (status === "ongoing") {
-    return `${translations[currentLanguage].started}: ${formatDate(
-      project.startDate
-    )}`;
-  } else if (status === "completed") {
-    return `${translations[currentLanguage].completed}: ${formatDate(
-      project.endDate
-    )}`;
-  } else if (status === "upcoming") {
-    return `${translations[currentLanguage].starts}: ${formatDate(
-      project.startDate
-    )}`;
-  } else {
-    return "";
-=======
   const date = new Date(dateString);
   const options = {
     year: "numeric",
@@ -1567,7 +1483,6 @@ function getStatusDateText(project) {
     return `${translations[window.currentLanguage].starts}: ${formatDate(
       project.startDate
     )}`;
->>>>>>> Stashed changes
   }
 }
 
@@ -1591,15 +1506,6 @@ function renderProjects(filteredProjects) {
   const projectGrid = document.getElementById("projectGrid");
   projectGrid.innerHTML = "";
 
-<<<<<<< Updated upstream
-  if (filteredProjects.length === 0) {
-    projectGrid.innerHTML = `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #666;">
-        <h3>${translations[currentLanguage].noProjectsFound}</h3>
-        <p>${translations[currentLanguage].tryAdjustingFilters}</p>
-        <button onclick="resetFilters()" style="margin-top: 20px; padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer;">
-          ${translations[currentLanguage].resetAllFilters}
-=======
   // Ensure currentLanguage is set
   if (!window.currentLanguage) {
     window.currentLanguage = "en";
@@ -1612,7 +1518,6 @@ function renderProjects(filteredProjects) {
         <p>${translations[window.currentLanguage].tryAdjustingFilters}</p>
         <button onclick="resetFilters()" style="margin-top: 20px; padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer;">
           ${translations[window.currentLanguage].resetAllFilters}
->>>>>>> Stashed changes
         </button>
       </div>
     `;
@@ -1634,11 +1539,7 @@ function renderProjects(filteredProjects) {
 
     // Get translated project content
     const projectTranslation =
-<<<<<<< Updated upstream
-      projectTranslations[currentLanguage][project.title] || project;
-=======
       projectTranslations[window.currentLanguage][project.title] || project;
->>>>>>> Stashed changes
     const translatedTitle = projectTranslation.title || project.title;
     const translatedDescription =
       projectTranslation.description || project.description;
@@ -1646,11 +1547,7 @@ function renderProjects(filteredProjects) {
     // Get translated status
     const statusKey = project.status.toLowerCase();
     const translatedStatus =
-<<<<<<< Updated upstream
-      translations[currentLanguage][statusKey] || project.status;
-=======
       translations[window.currentLanguage][statusKey] || project.status;
->>>>>>> Stashed changes
 
     projectCard.innerHTML = `
       <img src="${project.image}" alt="${translatedTitle}" loading="lazy">
@@ -1664,13 +1561,9 @@ function renderProjects(filteredProjects) {
           <big>${getStatusDateText(project)}</big>
           <a href="#" class="read-more-link" onclick="openProjectModal(${
             project.id
-<<<<<<< Updated upstream
-          }); return false;">${translations[currentLanguage].readMore}</a>
-=======
           }); return false;">${
       translations[window.currentLanguage].readMore
     }</a>
->>>>>>> Stashed changes
         </div>
       </div>
     `;
@@ -1687,14 +1580,11 @@ function renderPagination(totalProjects) {
   const paginationContainer = document.getElementById("pagination");
   paginationContainer.innerHTML = "";
 
-<<<<<<< Updated upstream
-=======
   // Ensure currentLanguage is set
   if (!window.currentLanguage) {
     window.currentLanguage = "en";
   }
 
->>>>>>> Stashed changes
   if (totalPages <= 1) return;
 
   // Function to scroll to projects section
@@ -1710,13 +1600,8 @@ function renderPagination(totalProjects) {
 
   // Previous button
   const prevButton = document.createElement("button");
-<<<<<<< Updated upstream
-  prevButton.textContent = "←";
-  prevButton.title = translations[currentLanguage].previous;
-=======
   prevButton.textContent = "<";
   prevButton.title = translations[window.currentLanguage].previous;
->>>>>>> Stashed changes
   prevButton.disabled = currentPage === 1;
   prevButton.onclick = () => {
     if (currentPage > 1) {
@@ -1793,13 +1678,8 @@ function renderPagination(totalProjects) {
 
   // Next button
   const nextButton = document.createElement("button");
-<<<<<<< Updated upstream
-  nextButton.textContent = "→";
-  nextButton.title = translations[currentLanguage].next;
-=======
   nextButton.textContent = ">";
   nextButton.title = translations[window.currentLanguage].next;
->>>>>>> Stashed changes
   nextButton.disabled = currentPage === totalPages;
   nextButton.onclick = () => {
     if (currentPage < totalPages) {
@@ -1874,11 +1754,6 @@ function openProjectModal(projectId) {
   const project = projects.find((p) => p.id === projectId);
   if (!project) return;
 
-<<<<<<< Updated upstream
-  // Get translated project content
-  const projectTranslation =
-    projectTranslations[currentLanguage][project.title] || project;
-=======
   // Ensure currentLanguage is set
   if (!window.currentLanguage) {
     window.currentLanguage = "en";
@@ -1887,7 +1762,6 @@ function openProjectModal(projectId) {
   // Get translated project content
   const projectTranslation =
     projectTranslations[window.currentLanguage][project.title] || project;
->>>>>>> Stashed changes
   const translatedTitle = projectTranslation.title || project.title;
   const translatedLongDescription =
     projectTranslation.longDescription || project.longDescription;
@@ -1899,11 +1773,7 @@ function openProjectModal(projectId) {
   // Get translated status
   const statusKey = project.status.toLowerCase();
   const translatedStatus =
-<<<<<<< Updated upstream
-    translations[currentLanguage][statusKey] || project.status;
-=======
     translations[window.currentLanguage][statusKey] || project.status;
->>>>>>> Stashed changes
 
   // Create modal overlay
   const modal = document.createElement("div");
@@ -1943,72 +1813,43 @@ function openProjectModal(projectId) {
           </div>
         </div>
         <div class="modal-description">
-<<<<<<< Updated upstream
-          <h3>${translations[currentLanguage].projectDescription}</h3>
-=======
           <h3>${translations[window.currentLanguage].projectDescription}</h3>
->>>>>>> Stashed changes
           <p>${translatedLongDescription}</p>
         </div>
         <div class="modal-details">
           <div class="detail-item">
-<<<<<<< Updated upstream
-            <strong>${translations[currentLanguage].category}:</strong> ${
-    translations[currentLanguage][project.category.toLowerCase()] ||
-=======
             <strong>${
               translations[window.currentLanguage].category
             }:</strong> ${
     translations[window.currentLanguage][project.category.toLowerCase()] ||
->>>>>>> Stashed changes
     project.category
   }
           </div>
           <div class="detail-item">
-<<<<<<< Updated upstream
-            <strong>${translations[currentLanguage].status}:</strong> 
-=======
             <strong>${translations[window.currentLanguage].status}:</strong> 
->>>>>>> Stashed changes
             <span class="status ${project.status.toLowerCase()}">${translatedStatus}</span>
           </div>
           <div class="detail-item">
             <strong>${
-<<<<<<< Updated upstream
-              translations[currentLanguage].duration
-=======
               translations[window.currentLanguage].duration
->>>>>>> Stashed changes
             }:</strong> ${formatDate(project.startDate)} - ${formatDate(
     project.endDate
   )}
           </div>
           <div class="detail-item">
             <strong>${
-<<<<<<< Updated upstream
-              translations[currentLanguage].team
-            }:</strong> ${translatedTeam}
-          </div>
-          <div class="detail-item">
-            <strong>${translations[currentLanguage].objectives}:</strong>
-=======
               translations[window.currentLanguage].team
             }:</strong> ${translatedTeam}
           </div>
           <div class="detail-item">
             <strong>${translations[window.currentLanguage].objectives}:</strong>
->>>>>>> Stashed changes
             <ul>${translatedObjectives
               .map((obj) => `<li>${obj}</li>`)
               .join("")}</ul>
           </div>
           <div class="detail-item">
             <strong>${
-<<<<<<< Updated upstream
-              translations[currentLanguage].impact
-=======
               translations[window.currentLanguage].impact
->>>>>>> Stashed changes
             }:</strong> ${translatedImpact}
           </div>
         </div>
@@ -2053,26 +1894,20 @@ function openProjectModal(projectId) {
   });
 
   document.body.appendChild(modal);
-<<<<<<< Updated upstream
-=======
 
   // Show modal immediately
   modal.style.display = "flex";
->>>>>>> Stashed changes
   setTimeout(() => {
     modal.classList.add("show");
   }, 10);
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-<<<<<<< Updated upstream
-=======
   // Initialize currentLanguage if not already set
   if (!window.currentLanguage) {
     window.currentLanguage = "en";
   }
 
->>>>>>> Stashed changes
   // Add event listeners for language flags
   document
     .querySelectorAll(".header-language img[data-lang]")

@@ -292,16 +292,6 @@
     top: 5px;
     right: 5px;
   }
-
-  .lightbox__image-container {
-    max-width: 60%;
-    max-height: 60%;
-  }
-
-  .lightbox__close {
-    top: 5px;
-    right: 5px;
-  }
 }
 
 @media (max-width: 600px) {

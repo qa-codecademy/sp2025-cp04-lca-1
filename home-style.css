@@ -131,11 +131,7 @@
     background-position: right center;
     background-repeat: no-repeat;
     background-size: cover;
-<<<<<<< Updated upstream
-    padding: 60px 15px;
-=======
     padding: 180px 15px 60px 15px;
->>>>>>> Stashed changes
     height: 100vh;
     min-height: 400px;
   }
