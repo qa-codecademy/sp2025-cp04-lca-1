@@ -6,8 +6,8 @@
     ),
     url("./Home-Images/./ddcd5234-de56-4a7f-ad49-cd89bbbb3dc7.png");
 
-  background-size: cover;
-  background-position: center;
+  background-size: 100vw 92vh;
+  background-position: center top;
   background-repeat: no-repeat;
   color: white;
 
@@ -88,6 +88,38 @@
   margin-left: 1.5em;
   margin-top: 20px;
 }
+
+/* Scroll down indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #222;
+  font-size: 3rem;
+  animation: blink 2s infinite;
+  cursor: pointer;
+  z-index: 2;
+  width: 92vw;
+  text-align: center;
+}
+
+.scroll-indicator:hover {
+  color: #007bff;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   .main-section {
     background: linear-gradient(
@@ -95,11 +127,15 @@
         rgba(255, 255, 255, 0.933),
         rgba(255, 255, 255, 0.301)
       ),
-      url("./Home-Images/outdoor-market-with-tents-people-park_1319036-9778.jpg");
+      url("./Home-Images/./ddcd5234-de56-4a7f-ad49-cd89bbbb3dc7.png");
     background-position: right center;
     background-repeat: no-repeat;
     background-size: cover;
+<<<<<<< Updated upstream
     padding: 60px 15px;
+=======
+    padding: 180px 15px 60px 15px;
+>>>>>>> Stashed changes
     height: 100vh;
     min-height: 400px;
   }
