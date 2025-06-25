@@ -25,3 +25,20 @@ menuLinks.forEach((link) => {
     }
   });
 });
+
+// Scroll indicator functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollIndicator = document.querySelector(".scroll-indicator");
+
+  if (scrollIndicator) {
+    scrollIndicator.addEventListener("click", function () {
+      const missionSection = document.getElementById("missionvision-connect");
+      if (missionSection) {
+        missionSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    });
+  }
+});

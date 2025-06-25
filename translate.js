@@ -45,6 +45,42 @@ const mainTranslations = {
       desc: "We bring people together to create sustainable development and positive change in communities across the region.",
       join: "Join Our Cause",
       learn: "Learn More",
+<<<<<<< Updated upstream
+=======
+      volunteerInfo: {
+        title: "Volunteer Opportunities",
+        subtitle: "Make a difference in your community",
+        description:
+          "Join our volunteer program and become part of a team dedicated to creating positive change in local communities.",
+        whatYouWillDo: "What You Will Do:",
+        activities: [
+          "Participate in community development projects",
+          "Support environmental conservation initiatives",
+          "Assist in educational programs and workshops",
+          "Help with healthcare awareness campaigns",
+          "Contribute to cultural preservation activities",
+          "Engage in infrastructure improvement projects",
+        ],
+        benefits: "Benefits of Volunteering:",
+        benefitsList: [
+          "Gain valuable experience and skills",
+          "Meet like-minded people and build networks",
+          "Make a positive impact in your community",
+          "Learn about sustainable development",
+          "Receive training and professional development",
+          "Earn certificates and recognition",
+        ],
+        requirements: "Requirements:",
+        requirementsList: [
+          "Minimum age: 16 years old",
+          "Commitment to community service",
+          "Willingness to learn and collaborate",
+          "Flexible availability (weekdays/weekends)",
+          "Positive attitude and teamwork skills",
+        ],
+        close: "Close",
+      },
+>>>>>>> Stashed changes
     },
     mission: {
       section: "Mission & Vision",
@@ -182,6 +218,42 @@ const mainTranslations = {
       desc: "Ги обединуваеме луѓето за да создадеме одржлив развој и позитивни промени во заедниците низ регионот.",
       join: "Придружи се",
       learn: "Дознај повеќе",
+<<<<<<< Updated upstream
+=======
+      volunteerInfo: {
+        title: "Волонтерски Можности",
+        subtitle: "Направете разлика во вашата заедница",
+        description:
+          "Придружете се на нашиот волонтерски програм и станете дел од тим посветен на создавање позитивни промени во локалните заедници.",
+        whatYouWillDo: "Што ќе правите:",
+        activities: [
+          "Учествување во проекти за заедничка развојна акција",
+          "Поддршка на иницијативи за заштита на животната средина",
+          "Помош при програми за образование и работилиски",
+          "Помош при кампании за заедничко знаење за здравство",
+          "Придонеси кон активности за зачување на културната традиција",
+          "Учествување во проекти за подобрување на инфраструктурата",
+        ],
+        benefits: "Победите од Волонтерството:",
+        benefitsList: [
+          "Зачувајте вредна искуства и вештини",
+          "Среќате се со слични луѓе и создавате мрежи",
+          "Направете позитивен утицај во вашата заедница",
+          "Научете за одржлив развој",
+          "Получувате обука и професионално развој",
+          "Заработувате сертификати и препознавање",
+        ],
+        requirements: "Услови:",
+        requirementsList: [
+          "Минимален возраст: 16 години",
+          "Комитот за заедничка услуга",
+          "Желба за учење и соработка",
+          "Позитивна нагласа и вештини за работа во тим",
+          "Флексибилна достапност (работни денови/викенди)",
+        ],
+        close: "Затвори",
+      },
+>>>>>>> Stashed changes
     },
     mission: {
       section: "Мисија и Визија",

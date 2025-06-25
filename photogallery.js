@@ -15,6 +15,11 @@ let currentTab = "all";
 let displayedImages = [];
 const IMAGES_PER_LOAD = 6;
 
+// Touch/swipe variables for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+let isSwiping = false;
+
 function fadeOutIn(callback) {
   container.style.opacity = 0;
   setTimeout(() => {
@@ -117,12 +122,18 @@ container.addEventListener("click", (e) => {
     lightboxImage.src = clickedImage.src;
     lightbox.style.display = "flex";
     document.body.classList.add("no-scroll");
+
+    // Add mobile-specific classes for full-screen experience
+    if (window.innerWidth <= 768) {
+      lightbox.classList.add("mobile-lightbox");
+    }
   }
 });
 
 function closeLightbox() {
   lightbox.style.display = "none";
   document.body.classList.remove("no-scroll");
+  lightbox.classList.remove("mobile-lightbox");
 }
 lightboxClose.addEventListener("click", closeLightbox);
 lightbox.addEventListener("click", (e) => {
@@ -149,3 +160,46 @@ function showPrevImage() {
 
 arrowRight.addEventListener("click", showNextImage);
 arrowLeft.addEventListener("click", showPrevImage);
+
+// Touch/swipe functionality for mobile
+lightbox.addEventListener("touchstart", (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+  isSwiping = false;
+});
+
+lightbox.addEventListener("touchmove", (e) => {
+  if (Math.abs(e.changedTouches[0].screenX - touchStartX) > 10) {
+    isSwiping = true;
+  }
+});
+
+lightbox.addEventListener("touchend", (e) => {
+  if (!isSwiping) return;
+
+  touchEndX = e.changedTouches[0].screenX;
+  const swipeThreshold = 50;
+  const swipeDistance = touchEndX - touchStartX;
+
+  if (Math.abs(swipeDistance) > swipeThreshold) {
+    if (swipeDistance > 0) {
+      // Swipe right - show previous image
+      showPrevImage();
+    } else {
+      // Swipe left - show next image
+      showNextImage();
+    }
+  }
+
+  isSwiping = false;
+});
+
+// Prevent default touch behaviors on lightbox
+lightbox.addEventListener(
+  "touchmove",
+  (e) => {
+    if (isSwiping) {
+      e.preventDefault();
+    }
+  },
+  { passive: false }
+);
