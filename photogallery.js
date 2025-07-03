@@ -7,6 +7,16 @@ const allImages = [
   "./photogaleryImages/slika7.jpg",
   "./photogaleryImages/slika8.jpg",
   "./photogaleryImages/slika9.jpg",
+  "./photogaleryImages/slika10.jpg",
+  "./photogaleryImages/slika11.jpg",
+  "./photogaleryImages/slika12.jpg",
+  "./photogaleryImages/slika13.jpg",
+  "./photogaleryImages/slika14.jpg",
+  "./photogaleryImages/slika15.jpg",
+  "./photogaleryImages/slika16.jpg",
+  "./photogaleryImages/slika17.jpg",
+  "./photogaleryImages/slika18.jpg",
+  "./photogaleryImages/slika19.jpg",
 ];
 
 const container = document.querySelector(".gallery-section__card-container");
@@ -14,6 +24,11 @@ const loadMoreBtn = document.getElementById("loadMoreBtn");
 let currentTab = "all";
 let displayedImages = [];
 const IMAGES_PER_LOAD = 6;
+
+// Touch/swipe variables for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+let isSwiping = false;
 
 function fadeOutIn(callback) {
   container.style.opacity = 0;
@@ -117,12 +132,18 @@ container.addEventListener("click", (e) => {
     lightboxImage.src = clickedImage.src;
     lightbox.style.display = "flex";
     document.body.classList.add("no-scroll");
+
+    // Add mobile-specific classes for full-screen experience
+    if (window.innerWidth <= 768) {
+      lightbox.classList.add("mobile-lightbox");
+    }
   }
 });
 
 function closeLightbox() {
   lightbox.style.display = "none";
   document.body.classList.remove("no-scroll");
+  lightbox.classList.remove("mobile-lightbox");
 }
 lightboxClose.addEventListener("click", closeLightbox);
 lightbox.addEventListener("click", (e) => {
@@ -149,3 +170,46 @@ function showPrevImage() {
 
 arrowRight.addEventListener("click", showNextImage);
 arrowLeft.addEventListener("click", showPrevImage);
+
+// Touch/swipe functionality for mobile
+lightbox.addEventListener("touchstart", (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+  isSwiping = false;
+});
+
+lightbox.addEventListener("touchmove", (e) => {
+  if (Math.abs(e.changedTouches[0].screenX - touchStartX) > 10) {
+    isSwiping = true;
+  }
+});
+
+lightbox.addEventListener("touchend", (e) => {
+  if (!isSwiping) return;
+
+  touchEndX = e.changedTouches[0].screenX;
+  const swipeThreshold = 50;
+  const swipeDistance = touchEndX - touchStartX;
+
+  if (Math.abs(swipeDistance) > swipeThreshold) {
+    if (swipeDistance > 0) {
+      // Swipe right - show previous image
+      showPrevImage();
+    } else {
+      // Swipe left - show next image
+      showNextImage();
+    }
+  }
+
+  isSwiping = false;
+});
+
+// Prevent default touch behaviors on lightbox
+lightbox.addEventListener(
+  "touchmove",
+  (e) => {
+    if (isSwiping) {
+      e.preventDefault();
+    }
+  },
+  { passive: false }
+);

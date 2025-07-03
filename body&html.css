@@ -16,3 +16,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
+
+select {
+  max-width: 170px;
+}

@@ -179,7 +179,7 @@
   }
 
   .contact-container h2 {
-    font-size: 22px;
+    font-size: 28px;
     text-align: center;
   }
 
@@ -195,5 +195,12 @@
     padding: 12px 16px;
     width: 100%;
     max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  .faq-title,
+  .contact-section h2 {
+    font-size: 1.3rem !important;
   }
 }
