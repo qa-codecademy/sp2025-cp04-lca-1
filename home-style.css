@@ -4,16 +4,18 @@
       rgba(255, 255, 255, 0.933),
       rgba(255, 255, 255, 0.301)
     ),
-    url("./Home-Images/outdoor-market-with-tents-people-park_1319036-9778.jpg");
+    url("./Home-Images/./ddcd5234-de56-4a7f-ad49-cd89bbbb3dc7.png");
 
-  background-size: cover;
-  background-position: center;
+  background-size: 100vw 92vh;
+  background-position: center top;
   background-repeat: no-repeat;
   color: white;
 
   text-align: center;
   padding: 100px 20px;
   position: relative;
+  height: 100vh;
+  min-height: 500px;
 }
 
 .header-section::before {
@@ -32,7 +34,7 @@
   z-index: 1;
 }
 .div-content h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-left: 0.5em;
   max-width: 700px;
   margin-top: auto;
@@ -43,7 +45,7 @@
   color: #222;
 }
 .div-content p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-left: 1.5em;
   max-width: 700px;
   margin-top: auto;
@@ -54,11 +56,12 @@
 .cta-button,
 .cta-secondary {
   display: inline-block;
-  padding: 12px 25px;
+  padding: 14px 32px;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
   margin: 10px 8px;
+  font-size: 1.15rem;
 }
 
 .cta-button {
@@ -71,13 +74,29 @@
 }
 
 .cta-secondary {
-  background-color: white;
-  border: 1px solid rgba(36, 36, 36, 0.5);
-  color: #222;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
+  padding: 0.9rem 2rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease,
+    color 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 .cta-secondary:hover {
-  background-color: rgba(213, 213, 213, 0.15);
+  background-color: #f3f4f6;
+  color: #111827;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-secondary:active {
+  background-color: #e5e7eb;
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 .cta-group {
@@ -85,6 +104,38 @@
   margin-left: 1.5em;
   margin-top: 20px;
 }
+
+/* Scroll down indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #222;
+  font-size: 3rem;
+  animation: blink 2s infinite;
+  cursor: pointer;
+  z-index: 2;
+  width: 12vw;
+  text-align: center;
+}
+
+.scroll-indicator:hover {
+  color: #007bff;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   .main-section {
     background: linear-gradient(
@@ -92,22 +143,25 @@
         rgba(255, 255, 255, 0.933),
         rgba(255, 255, 255, 0.301)
       ),
-      url("./Home-Images/outdoor-market-with-tents-people-park_1319036-9778.jpg");
+      url("./Home-Images/./ddcd5234-de56-4a7f-ad49-cd89bbbb3dc7.png");
     background-position: right center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 60px 15px;
+    padding: 120px 15px 60px 15px;
+    height: 100vh;
+    min-height: 400px;
   }
 
   .div-content h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin: 0 auto;
     text-align: center;
     max-width: 90%;
   }
 
   .div-content p {
-    font-size: 1rem;
+    margin-top: 13px !important;
+    font-size: 1.1rem;
     margin: 10px auto;
     text-align: center;
     max-width: 90%;
@@ -116,5 +170,130 @@
   .cta-group {
     text-align: center;
     margin: 20px auto 0;
+  }
+  .cta-button {
+    font-size: 1rem !important;
+    padding: 10px 18px;
+  }
+  .cta-button,
+  .cta-secondary {
+    font-size: 1rem !important;
+    padding: 10px 18px;
+  }
+}
+
+/* --- FORCE landscape mobile home top alignment --- */
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  .main-section {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding-top: 50px !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .div-content {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .div-content h1 {
+    font-size: 2rem !important;
+  }
+  .div-content p {
+    font-size: 0.9rem !important;
+  }
+  .cta-group {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .cta-button {
+    font-size: 1.15rem !important;
+    padding: 10px 20px !important;
+    margin: 0 3px !important;
+  }
+
+  .cta-secondary {
+    font-size: 1.15rem !important;
+    padding: 10px 20px !important;
+    margin: 0 2px !important;
+  }
+
+  /* Split text into two lines in landscape */
+  .div-content p {
+    margin-top: 10px;
+    max-width: 500px;
+  }
+
+  #supporter-color {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    margin-bottom: 0.5em !important;
+  }
+  #supporters-background p {
+    font-size: 1.1rem !important;
+    text-align: center !important;
+    margin-bottom: 0 !important;
+  }
+  .cta-button,
+  .cta-secondary {
+    font-size: 0.85rem !important;
+    padding: 7px 14px !important;
+    min-width: unset !important;
+    height: unset !important;
+    margin: 5px 3px !important;
+  }
+  .scroll-indicator {
+    bottom: 110px !important;
+  }
+}
+
+/* Tablet-specific home page adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-section {
+    padding: 80px 32px 60px 32px;
+    min-height: 450px;
+    background-size: cover;
+    background-position: right top;
+  }
+  .div-content {
+    margin-top: 30vw;
+    margin-right: auto;
+    max-width: 900px;
+    text-align: left;
+  }
+  .div-content h1 {
+    font-size: 3.2rem;
+    text-align: left;
+  }
+  .div-content p {
+    font-size: 1.7rem;
+    text-align: left;
+  }
+  .cta-group {
+    text-align: left;
+    margin-left: 1.5em;
+    margin-top: 18px;
+  }
+  .cta-button,
+  .cta-secondary {
+    font-size: 1.08rem;
+    padding: 14px 36px;
+    min-width: 180px;
+    height: 52px;
+    border-radius: 5px;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 10px 8px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .scroll-indicator {
+    font-size: 3rem;
+    bottom: 70px;
+    width: 16vw;
   }
 }

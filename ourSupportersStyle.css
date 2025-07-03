@@ -1,7 +1,7 @@
 .sponsors-movingText {
   width: 100%;
-  max-width: 95vw;
-  margin: 0 auto;
+  max-width: 100%;
+  /* margin: 0 25px; */
   overflow: hidden;
   background-color: #f9fafb;
   position: relative;
@@ -58,7 +58,7 @@
 #supporter-color {
   color: black;
   font-size: 28px;
-  margin-bottom: 6px;
+  margin: 70px 0 6px 0;
 }
 
 #supporters-background p {
@@ -92,10 +92,25 @@
   }
 
   #supporter-color {
-    font-size: 32px;
+    font-size: 2rem !important;
   }
 
   #supporters-background p {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  #supporter-color {
+    font-size: 2rem !important;
+  }
+  .supporters-description {
+    font-size: 1.1rem !important;
+  }
+  .sponsors-movingText {
+    margin-top: 10px !important;
+  }
+  .sponsor {
+    font-size: 0.95rem !important;
   }
 }
