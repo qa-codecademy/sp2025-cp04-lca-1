@@ -1072,5 +1072,22 @@
         }, 0);
       });
     </script>
+    <script>
+// Блокира десен клик
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+// Блокира F12 и некои други Developer Tools кратенки
+document.addEventListener('keydown', function (event) {
+    if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J" || event.key === "C")) ||
+        (event.ctrlKey && event.key === "U")
+    ) {
+        event.preventDefault();
+        return false;
+    }
+});
+</script>
+
   </body>
 </html>
