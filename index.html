@@ -1,1093 +1,1044 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script>
-      if (window.location.hash) {
-        history.replaceState(
-          null,
-          document.title,
-          window.location.pathname + window.location.search
-        );
-      }
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Local Act</title>
-    <link rel="stylesheet" href="headerstyle.css" />
-    <link rel="stylesheet" href="home-style.css" />
-    <link rel="stylesheet" href="ourSupportersStyle.css" />
-    <link rel="stylesheet" href="photogallery.css" />
-    <link rel="stylesheet" href="footer.css" />
-    <link rel="stylesheet" href="mission&vision.css" />
-    <link rel="stylesheet" href="login.css" />
-    <link rel="stylesheet" href="faq&form.css" />
-    <link rel="stylesheet" href="body&html.css" />
-    <link rel="stylesheet" href="ourproject.css" />
-    <link rel="stylesheet" href="volunteer.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <script src="headerscript.js" defer></script>
-    <script src="form.js" defer></script>
-    <script src="photogallery.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script defer src="form.js"></script>
-    <script
-      src="https://kit.fontawesome.com/a2e0e6d26b.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="faq.js" defer></script>
-    <script src="login.js" defer></script>
-    <script src="ourproject.js" defer></script>
-    <script src="translate.js" defer></script>
-    <script src="volunteer.js" defer></script>
-  </head>
-  <body>
-    <div id="home-a"></div>
-    <!-- ============================================================= HEADER ============================================================= -->
-    <header class="header-main">
-      <div class="header-main-container">
-        <div class="header-logo">
-          <a href="#home-a"">
-            <img src="header-images/logopng.png" alt="Logo" />
-          </a>
-        </div>
-        <div class="header-right-mobile">
-          <div
-            class="header-login-mobile user-profile"
-            aria-label="User Login Button"
-            tabindex="0"
-            role="button"
-            style="display: none"
-          >
-            <div class="user-profile-inner">
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <g data-name="Layer 2" id="Layer_2">
-                  <path
-                    d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"
-                  ></path>
-                </g>
-              </svg>
-              <p>Log In</p>
-            </div>
-            <!-- MOBILE DROPDOWN MENU -->
-            <div
-              id="user-dropdown-mobile"
-              class="user-dropdown"
-              style="display: none"
-            >
-              <div class="dropdown-item" id="your-account-btn-mobile">
-                Your Account
-              </div>
-              <div class="dropdown-item" id="header-logout-btn-mobile">
-                Logout
-              </div>
-            </div>
-          </div>
-          <div class="menu-icon" id="menu-icon">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-        </div>
-        <ul class="header-ul-items" id="menu">
-          <li class="header-nav-item"><a href="#home-a">Home</a></li>
-          <li class="header-nav-item">
-            <a href="#missionvision-connect">Mission & Vision</a>
-          </li>
-          <li class="header-nav-item"><a href="#ourproject-a">Projects</a></li>
-          <li class="header-nav-item"><a href="#photogallery-a">Gallery</a></li>
-          <li class="header-nav-item">
-            <a href="#faq&from-connect">Contact</a>
-          </li>
-          <!-- Мобилна верзија: само знамињата внатре во менито -->
-          <li class="header-language-wrapper-mobile">
-            <div class="header-language">
-              <img
-                src="header-images/Flag-North-Macedonia.gif"
-                alt="MK"
-                data-lang="mk"
-              />
-            </div>
-            <div class="header-language">
-              <img
-                src="header-images/Flag_of_the_United_Kingdom_(1-2).svg.webp"
-                alt="ENG"
-                data-lang="en"
-              />
-            </div>
-          </li>
-        </ul>
+	<head>
+		<script>
+			if (window.location.hash) {
+				history.replaceState(
+					null,
+					document.title,
+					window.location.pathname + window.location.search
+				);
+			}
+			window.scrollTo(0, 0);
+			document.documentElement.scrollTop = 0;
+			document.body.scrollTop = 0;
+		</script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Local Act</title>
+		<link rel="stylesheet" href="headerstyle.css" />
+		<link rel="stylesheet" href="home-style.css" />
+		<link rel="stylesheet" href="ourSupportersStyle.css" />
+		<link rel="stylesheet" href="photogallery.css" />
+		<link rel="stylesheet" href="footer.css" />
+		<link rel="stylesheet" href="mission&vision.css" />
+		<link rel="stylesheet" href="login.css" />
+		<link rel="stylesheet" href="faq&form.css" />
+		<link rel="stylesheet" href="body&html.css" />
+		<link rel="stylesheet" href="ourproject.css" />
+		<link rel="stylesheet" href="volunteer.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+		<script src="headerscript.js" defer></script>
+		<script src="form.js" defer></script>
+		<script src="photogallery.js" defer></script>
+		<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+		<script defer src="form.js"></script>
+		<script
+			src="https://kit.fontawesome.com/a2e0e6d26b.js"
+			crossorigin="anonymous"></script>
+		<script src="faq.js" defer></script>
+		<script src="login.js" defer></script>
+		<script src="ourproject.js" defer></script>
+		<script src="translate.js" defer></script>
+		<script src="volunteer.js" defer></script>
+	</head>
+	<body>
+		<div id="home-a"></div>
+		<!-- ============================================================= HEADER ============================================================= -->
+		<header class="header-main">
+			<div class="header-main-container">
+				<div class="header-logo">
+					<a href="#home-a">
+						<img src="./header-images/logopng.png" alt="Logo" />
+					</a>
+				</div>
+				<div class="header-right-mobile">
+					<div
+						class="header-login-mobile user-profile"
+						aria-label="User Login Button"
+						tabindex="0"
+						role="button"
+						style="display: none">
+						<div class="user-profile-inner">
+							<svg
+								aria-hidden="true"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24">
+								<g data-name="Layer 2" id="Layer_2">
+									<path
+										d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"></path>
+								</g>
+							</svg>
+							<p>Log In</p>
+						</div>
+						<!-- MOBILE DROPDOWN MENU -->
+						<div
+							id="user-dropdown-mobile"
+							class="user-dropdown"
+							style="display: none">
+							<div class="dropdown-item" id="your-account-btn-mobile">
+								Your Account
+							</div>
+							<div class="dropdown-item" id="header-logout-btn-mobile">
+								Logout
+							</div>
+						</div>
+					</div>
+					<div class="menu-icon" id="menu-icon">
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</div>
+				</div>
+				<ul class="header-ul-items" id="menu">
+					<li class="header-nav-item"><a href="#home-a">Home</a></li>
+					<li class="header-nav-item">
+						<a href="#missionvision-connect">Mission & Vision</a>
+					</li>
+					<li class="header-nav-item"><a href="#ourproject-a">Projects</a></li>
+					<li class="header-nav-item"><a href="#photogallery-a">Gallery</a></li>
+					<li class="header-nav-item">
+						<a href="#faq&from-connect">Contact</a>
+					</li>
+					<!-- Мобилна верзија: само знамињата внатре во менито -->
+					<li class="header-language-wrapper-mobile">
+						<div class="header-language">
+							<img
+								src="./header-images/Flag-North-Macedonia.gif"
+								alt="MK"
+								data-lang="mk" />
+						</div>
+						<div class="header-language">
+							<img
+								src="./header-images/Flag_of_the_United_Kingdom_(1-2).svg.webp"
+								alt="ENG"
+								data-lang="en" />
+						</div>
+					</li>
+				</ul>
 
-        <!-- Десктоп верзија: знамиња и логин копче заедно десно -->
-        <div class="header-language-wrapper-desktop">
-          <div class="header-language">
-            <img
-              src="header-images/Flag-North-Macedonia.gif"
-              alt="MK"
-              data-lang="mk"
-            />
-          </div>
-          <div class="header-language">
-            <img
-              src="header-images/Flag_of_the_United_Kingdom_(1-2).svg.webp"
-              alt="ENG"
-              data-lang="en"
-            />
-          </div>
-          <div
-            aria-label="User Login Button"
-            tabindex="0"
-            role="button"
-            class="user-profile"
-          >
-            <div class="user-profile-inner">
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <g data-name="Layer 2" id="Layer_2">
-                  <path
-                    d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"
-                  ></path>
-                </g>
-              </svg>
-              <p>Log In</p>
-            </div>
+				<!-- Десктоп верзија: знамиња и логин копче заедно десно -->
+				<div class="header-language-wrapper-desktop">
+					<div class="header-language">
+						<img
+							src="./header-images/Flag-North-Macedonia.gif"
+							alt="MK"
+							data-lang="mk" />
+					</div>
+					<div class="header-language">
+						<img
+							src="./header-images/Flag_of_the_United_Kingdom_(1-2).svg.webp"
+							alt="ENG"
+							data-lang="en" />
+					</div>
+					<div
+						aria-label="User Login Button"
+						tabindex="0"
+						role="button"
+						class="user-profile">
+						<div class="user-profile-inner">
+							<svg
+								aria-hidden="true"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24">
+								<g data-name="Layer 2" id="Layer_2">
+									<path
+										d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"></path>
+								</g>
+							</svg>
+							<p>Log In</p>
+						</div>
 
-            <!-- User Dropdown Menu (shown when logged in) -->
-            <div id="user-dropdown" class="user-dropdown" style="display: none">
-              <div class="dropdown-item" id="your-account-btn">
-                Your Account
-              </div>
-              <div class="dropdown-item" id="header-logout-btn">Logout</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+						<!-- User Dropdown Menu (shown when logged in) -->
+						<div id="user-dropdown" class="user-dropdown" style="display: none">
+							<div class="dropdown-item" id="your-account-btn">
+								Your Account
+							</div>
+							<div class="dropdown-item" id="header-logout-btn">Logout</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
 
-    <!-- ================================================================================================================================ -->
+		<!-- ================================================================================================================================ -->
 
-    <!-- ============================================================= LOGIN ============================================================= -->
-    <div id="login-popup" class="login-popup-overlay">
-      <div class="login-popup-content">
-        <button id="login-close-btn" class="login-close-btn">&times;</button>
+		<!-- ============================================================= LOGIN ============================================================= -->
+		<div id="login-popup" class="login-popup-overlay">
+			<div class="login-popup-content">
+				<button id="login-close-btn" class="login-close-btn">&times;</button>
 
-        <!-- User Profile Section (shown when logged in) -->
-        <div id="user-profile-container" style="display: none">
-          <h2>Welcome!</h2>
-          <div class="user-info">
-            <div class="user-avatar">
-              <i class="fas fa-user-circle"></i>
-            </div>
-            <div class="user-details">
-              <h3 id="profile-username">Username</h3>
-              <p id="profile-email">email@example.com</p>
-              <p class="member-since">
-                Member since: <span id="profile-date">2024</span>
-              </p>
-            </div>
-          </div>
-          <div class="profile-actions">
-            <button id="back-btn" class="back-button">
-              <i class="fas fa-edit"></i>
-              Edit Account
-            </button>
-          </div>
-        </div>
+				<!-- User Profile Section (shown when logged in) -->
+				<div id="user-profile-container" style="display: none">
+					<h2>Welcome!</h2>
+					<div class="user-info">
+						<div class="user-avatar">
+							<i class="fas fa-user-circle"></i>
+						</div>
+						<div class="user-details">
+							<h3 id="profile-username">Username</h3>
+							<p id="profile-email">email@example.com</p>
+							<p class="member-since">
+								Member since: <span id="profile-date">2024</span>
+							</p>
+						</div>
+					</div>
+					<div class="profile-actions">
+						<button id="back-btn" class="back-button">
+							<i class="fas fa-edit"></i>
+							Edit Account
+						</button>
+					</div>
+				</div>
 
-        <!-- Edit Account Section -->
-        <div id="edit-account-container" style="display: none">
-          <h2>Edit Account</h2>
-          <form id="edit-account-form">
-            <label for="edit-email">Email</label>
-            <input type="email" id="edit-email" name="email" required />
+				<!-- Edit Account Section -->
+				<div id="edit-account-container" style="display: none">
+					<h2>Edit Account</h2>
+					<form id="edit-account-form">
+						<label for="edit-email">Email</label>
+						<input type="email" id="edit-email" name="email" required />
 
-            <div class="password-section">
-              <h3>Change Password</h3>
-              <label for="current-password">Current Password</label>
-              <input
-                type="password"
-                id="current-password"
-                name="currentPassword"
-              />
+						<div class="password-section">
+							<h3>Change Password</h3>
+							<label for="current-password">Current Password</label>
+							<input
+								type="password"
+								id="current-password"
+								name="currentPassword" />
 
-              <label for="edit-password">New Password</label>
-              <input type="password" id="edit-password" name="password" />
+							<label for="edit-password">New Password</label>
+							<input type="password" id="edit-password" name="password" />
 
-              <label for="edit-confirm-password">Confirm New Password</label>
-              <input
-                type="password"
-                id="edit-confirm-password"
-                name="confirmPassword"
-              />
-            </div>
+							<label for="edit-confirm-password">Confirm New Password</label>
+							<input
+								type="password"
+								id="edit-confirm-password"
+								name="confirmPassword" />
+						</div>
 
-            <div class="edit-actions">
-              <button type="submit" class="save-button">
-                <i class="fas fa-save"></i>
-                Save Changes
-              </button>
-            </div>
-          </form>
-        </div>
+						<div class="edit-actions">
+							<button type="submit" class="save-button">
+								<i class="fas fa-save"></i>
+								Save Changes
+							</button>
+						</div>
+					</form>
+				</div>
 
-        <!-- Login Section (shown when not logged in) -->
-        <div id="login-container">
-          <h2>Login</h2>
-          <form id="login-form">
-            <label for="login-username">Username</label>
-            <input type="text" id="login-username" name="username" required />
+				<!-- Login Section (shown when not logged in) -->
+				<div id="login-container">
+					<h2>Login</h2>
+					<form id="login-form">
+						<label for="login-username">Username</label>
+						<input type="text" id="login-username" name="username" required />
 
-            <label for="login-password">Password</label>
-            <input
-              type="password"
-              id="login-password"
-              name="password"
-              required
-            />
+						<label for="login-password">Password</label>
+						<input
+							type="password"
+							id="login-password"
+							name="password"
+							required />
 
-            <button type="submit" class="login-button">
-              <i class="fas fa-sign-in-alt"></i>
-              Log In
-            </button>
-          </form>
+						<button type="submit" class="login-button">
+							<i class="fas fa-sign-in-alt"></i>
+							Log In
+						</button>
+					</form>
 
-          <div
-            class="form-links"
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 0;
-              align-items: center;
-              justify-content: center;
-              width: 100%;
-            "
-          >
-            <a href="#" id="create-account-link">
-              <i class="fas fa-user-plus"></i>
-              Create New Account
-            </a>
-            <a
-              href="#"
-              id="forgot-password-link"
-              style="
-                color: #007bff;
-                text-decoration: underline;
-                margin-top: 6px;
-              "
-            >
-              <i class="fas fa-unlock-alt"></i>
-              Forgot password?
-            </a>
-          </div>
-        </div>
+					<div
+						class="form-links"
+						style="
+							display: flex;
+							flex-direction: column;
+							gap: 0;
+							align-items: center;
+							justify-content: center;
+							width: 100%;
+						">
+						<a href="#" id="create-account-link">
+							<i class="fas fa-user-plus"></i>
+							Create New Account
+						</a>
+						<a
+							href="#"
+							id="forgot-password-link"
+							style="
+								color: #007bff;
+								text-decoration: underline;
+								margin-top: 6px;
+							">
+							<i class="fas fa-unlock-alt"></i>
+							Forgot password?
+						</a>
+					</div>
+				</div>
 
-        <!-- Registration Section -->
-        <div id="register-container" style="display: none">
-          <h2>Create Account</h2>
-          <form id="register-form">
-            <label for="register-username">Username</label>
-            <input
-              type="text"
-              id="register-username"
-              name="username"
-              required
-            />
+				<!-- Registration Section -->
+				<div id="register-container" style="display: none">
+					<h2>Create Account</h2>
+					<form id="register-form">
+						<label for="register-username">Username</label>
+						<input
+							type="text"
+							id="register-username"
+							name="username"
+							required />
 
-            <label for="register-email">Email</label>
-            <input type="email" id="register-email" name="email" required />
+						<label for="register-email">Email</label>
+						<input type="email" id="register-email" name="email" required />
 
-            <label for="register-password">Password</label>
-            <input
-              type="password"
-              id="register-password"
-              name="password"
-              required
-            />
+						<label for="register-password">Password</label>
+						<input
+							type="password"
+							id="register-password"
+							name="password"
+							required />
 
-            <label for="register-confirm-password">Confirm Password</label>
-            <input
-              type="password"
-              id="register-confirm-password"
-              name="confirmPassword"
-              required
-            />
+						<label for="register-confirm-password">Confirm Password</label>
+						<input
+							type="password"
+							id="register-confirm-password"
+							name="confirmPassword"
+							required />
 
-            <button type="submit" class="register-button">
-              <i class="fas fa-user-plus"></i>
-              Create Account
-            </button>
-          </form>
+						<button type="submit" class="register-button">
+							<i class="fas fa-user-plus"></i>
+							Create Account
+						</button>
+					</form>
 
-          <div class="form-links">
-            <a href="#" id="back-to-login-link">
-              <i class="fas fa-sign-in-alt"></i>
-              Back to Log In
-            </a>
-          </div>
-        </div>
+					<div class="form-links">
+						<a href="#" id="back-to-login-link">
+							<i class="fas fa-sign-in-alt"></i>
+							Back to Log In
+						</a>
+					</div>
+				</div>
 
-        <!-- Forgot Password Section -->
-        <div id="forgot-password-container" style="display: none">
-          <h2>Forgot Password</h2>
-          <form id="forgot-password-form">
-            <label for="forgot-password-email">Email</label>
-            <input
-              type="email"
-              id="forgot-password-email"
-              name="email"
-              required
-            />
-            <button type="submit" class="register-button">
-              <i class="fas fa-unlock-alt"></i>
-              Send Reset Link
-            </button>
-            <div id="forgot-password-message"></div>
-          </form>
-          <div class="form-links">
-            <a href="#" id="back-to-login-link-forgot">
-              <i class="fas fa-sign-in-alt"></i>
-              Back to Log In
-            </a>
-          </div>
-        </div>
-        <!-- Reset Password Section (integrated from reset-password.html) -->
-        <div id="reset-password-container" style="display: none">
-          <h2>Reset Password</h2>
-          <form id="reset-password-form">
-            <label for="reset-password-email">Email</label>
-            <input
-              type="email"
-              id="reset-password-email"
-              name="email"
-              required
-            />
+				<!-- Forgot Password Section -->
+				<div id="forgot-password-container" style="display: none">
+					<h2>Forgot Password</h2>
+					<form id="forgot-password-form">
+						<label for="forgot-password-email">Email</label>
+						<input
+							type="email"
+							id="forgot-password-email"
+							name="email"
+							required />
+						<button type="submit" class="register-button">
+							<i class="fas fa-unlock-alt"></i>
+							Send Reset Link
+						</button>
+						<div id="forgot-password-message"></div>
+					</form>
+					<div class="form-links">
+						<a href="#" id="back-to-login-link-forgot">
+							<i class="fas fa-sign-in-alt"></i>
+							Back to Log In
+						</a>
+					</div>
+				</div>
+				<!-- Reset Password Section (integrated from reset-password.html) -->
+				<div id="reset-password-container" style="display: none">
+					<h2>Reset Password</h2>
+					<form id="reset-password-form">
+						<label for="reset-password-email">Email</label>
+						<input
+							type="email"
+							id="reset-password-email"
+							name="email"
+							required />
 
-            <label for="reset-password-new">New Password</label>
-            <input
-              type="password"
-              id="reset-password-new"
-              name="password"
-              required
-            />
+						<label for="reset-password-new">New Password</label>
+						<input
+							type="password"
+							id="reset-password-new"
+							name="password"
+							required />
 
-            <label for="reset-password-confirm">Confirm New Password</label>
-            <input
-              type="password"
-              id="reset-password-confirm"
-              name="confirmPassword"
-              required
-            />
+						<label for="reset-password-confirm">Confirm New Password</label>
+						<input
+							type="password"
+							id="reset-password-confirm"
+							name="confirmPassword"
+							required />
 
-            <button type="submit" class="register-button">
-              <i class="fas fa-save"></i>
-              Reset Password
-            </button>
-            <div id="reset-password-message"></div>
-          </form>
-        </div>
-      </div>
-    </div>
+						<button type="submit" class="register-button">
+							<i class="fas fa-save"></i>
+							Reset Password
+						</button>
+						<div id="reset-password-message"></div>
+					</form>
+				</div>
+			</div>
+		</div>
 
-    <!-- ================================================================================================================================ -->
+		<!-- ================================================================================================================================ -->
 
-    <!-- ============================================================= HOME ============================================================= -->
-    <main class="main-section" id="home">
-      <div class="div-content">
-        <h1>
-          Empowering <br />
-          Communities Through <br />
-          Local Action
-        </h1>
-        <p>
-          We bring people together to create sustainable development and
-          positive change in communities across the region.
-        </p>
-        <div class="cta-group">
-          <button class="cta-button" id="join-cause-btn">Join Our Cause</button>
-          <button class="cta-secondary" id="learn-more-btn">Learn More</button>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <i class="fas fa-chevron-down"></i>
-      </div>
-    </main>
-    <!-- <br />
+		<!-- ============================================================= HOME ============================================================= -->
+		<main class="main-section" id="home">
+			<div class="div-content">
+				<h1>
+					Empowering <br />
+					Communities Through <br />
+					Local Action
+				</h1>
+				<p>
+					We bring people together to create sustainable development and
+					positive change in communities across the region.
+				</p>
+				<div class="cta-group">
+					<button class="cta-button" id="join-cause-btn">Join Our Cause</button>
+					<button class="cta-secondary" id="learn-more-btn">Learn More</button>
+				</div>
+			</div>
+			<div class="scroll-indicator">
+				<i class="fas fa-chevron-down"></i>
+			</div>
+		</main>
+		<!-- <br />
     <br />
     <br /> -->
-    <!-- ================================================================================================================================ -->
+		<!-- ================================================================================================================================ -->
 
-    <!-- ====================================================== MISSION & VISION ====================================================== -->
-    <section class="wrapper" id="missionvision-connect">
-      <div class="section-title-wrapper">
-        <h2 class="section-title">Mission & Vision</h2>
-        <div class="section-underline"></div>
-      </div>
-      <div class="cards">
-        <!-- Mission -->
-        <div class="card">
-          <div class="icon blue">
-            <img src="mission&vision-images/kompas.png" alt="Mission Icon" />
-          </div>
-          <h3>Our Mission</h3>
-          <p>
-            LOCAL ACT is dedicated to fostering sustainable local development
-            through community-driven initiatives, collaborative partnerships,
-            and innovative solutions that address the unique challenges faced by
-            communities.
-          </p>
-          <p>
-            We believe in empowering individuals and organizations to take an
-            active role in shaping their communities, creating inclusive spaces
-            where everyone can thrive and contribute to positive change.
-          </p>
-        </div>
+		<!-- ====================================================== MISSION & VISION ====================================================== -->
+		<section class="wrapper" id="missionvision-connect">
+			<div class="section-title-wrapper">
+				<h2 class="section-title">Mission & Vision</h2>
+				<div class="section-underline"></div>
+			</div>
+			<div class="cards">
+				<!-- Mission -->
+				<div class="card">
+					<div class="icon blue">
+						<img src="./mission&vision-images/kompas.png" alt="Mission Icon" />
+					</div>
+					<h3>Our Mission</h3>
+					<p>
+						LOCAL ACT is dedicated to fostering sustainable local development
+						through community-driven initiatives, collaborative partnerships,
+						and innovative solutions that address the unique challenges faced by
+						communities.
+					</p>
+					<p>
+						We believe in empowering individuals and organizations to take an
+						active role in shaping their communities, creating inclusive spaces
+						where everyone can thrive and contribute to positive change.
+					</p>
+				</div>
 
-        <!-- Vision -->
-        <div class="card">
-          <div class="icon green">
-            <img src="mission&vision-images/oko.png" alt="Vision Icon" />
-          </div>
-          <h3>Our Vision</h3>
-          <p>
-            We envision vibrant, resilient communities where local resources are
-            leveraged effectively, social cohesion is strengthened, and
-            sustainable development practices are embedded in everyday life.
-          </p>
-          <p>
-            By 2030, we aim to have supported over 100 communities in developing
-            self-sustaining initiatives that improve quality of life, preserve
-            cultural heritage, and protect the environment for future
-            generations.
-          </p>
-        </div>
-        <div id="ourproject-a"></div>
-      </div>
-    </section>
-    <!-- ================================================================================================================================ -->
-    <!-- ======================================================== OUR PROJECTS ======================================================== -->
-    <div class="container" id="projects">
-      <header class="page-header">
-        <div class="header-top">
-          <h1 data-translate="title" class="ourprojects-title">Our Projects</h1>
-        </div>
-        <p class="description" data-translate="description">
-          Explore our diverse projects and filter by category, status, and date
-          range.
-        </p>
-        <div class="underline"></div>
-      </header>
+				<!-- Vision -->
+				<div class="card">
+					<div class="icon green">
+						<img src="./mission&vision-images/oko.png" alt="Vision Icon" />
+					</div>
+					<h3>Our Vision</h3>
+					<p>
+						We envision vibrant, resilient communities where local resources are
+						leveraged effectively, social cohesion is strengthened, and
+						sustainable development practices are embedded in everyday life.
+					</p>
+					<p>
+						By 2030, we aim to have supported over 100 communities in developing
+						self-sustaining initiatives that improve quality of life, preserve
+						cultural heritage, and protect the environment for future
+						generations.
+					</p>
+				</div>
+				<div id="ourproject-a"></div>
+			</div>
+		</section>
+		<!-- ================================================================================================================================ -->
+		<!-- ======================================================== OUR PROJECTS ======================================================== -->
+		<div class="container" id="projects">
+			<header class="page-header">
+				<div class="header-top">
+					<h1 data-translate="title" class="ourprojects-title">Our Projects</h1>
+				</div>
+				<p class="description" data-translate="description">
+					Explore our diverse projects and filter by category, status, and date
+					range.
+				</p>
+				<div class="underline"></div>
+			</header>
 
-      <main class="content-wrapper">
-        <aside class="filters-sidebar">
-          <h2 class="filters-title" data-translate="filters">Filters</h2>
+			<main class="content-wrapper">
+				<aside class="filters-sidebar">
+					<h2 class="filters-title" data-translate="filters">Filters</h2>
 
-          <form class="filters-form" id="filterForm">
-            <div class="filter-group">
-              <label class="filter-legend" data-translate="category"
-                >Category</label
-              >
-              <select class="filter-select" id="category" name="category">
-                <option value="all" data-translate="allCategories">
-                  All Categories
-                </option>
-                <option value="Environment" data-translate="environment">
-                  Environment
-                </option>
-                <option value="Education" data-translate="education">
-                  Education
-                </option>
-                <option value="Healthcare" data-translate="healthcare">
-                  Healthcare
-                </option>
-                <option value="Infrastructure" data-translate="infrastructure">
-                  Infrastructure
-                </option>
-                <option value="Cultural" data-translate="cultural">
-                  Cultural
-                </option>
-              </select>
-            </div>
+					<form class="filters-form" id="filterForm">
+						<div class="filter-group">
+							<label class="filter-legend" data-translate="category"
+								>Category</label
+							>
+							<select class="filter-select" id="category" name="category">
+								<option value="all" data-translate="allCategories">
+									All Categories
+								</option>
+								<option value="Environment" data-translate="environment">
+									Environment
+								</option>
+								<option value="Education" data-translate="education">
+									Education
+								</option>
+								<option value="Healthcare" data-translate="healthcare">
+									Healthcare
+								</option>
+								<option value="Infrastructure" data-translate="infrastructure">
+									Infrastructure
+								</option>
+								<option value="Cultural" data-translate="cultural">
+									Cultural
+								</option>
+							</select>
+						</div>
 
-            <div class="filter-group">
-              <label class="filter-legend" data-translate="status"
-                >Status</label
-              >
-              <div class="checkbox-group">
-                <label class="checkbox-label">
-                  <input
-                    type="checkbox"
-                    class="filter-checkbox"
-                    name="status"
-                    value="Ongoing"
-                  />
-                  <span class="checkbox-text" data-translate="ongoing"
-                    >Ongoing</span
-                  >
-                </label>
-                <label class="checkbox-label">
-                  <input
-                    type="checkbox"
-                    class="filter-checkbox"
-                    name="status"
-                    value="Completed"
-                  />
-                  <span class="checkbox-text" data-translate="completed"
-                    >Completed</span
-                  >
-                </label>
-                <label class="checkbox-label">
-                  <input
-                    type="checkbox"
-                    class="filter-checkbox"
-                    name="status"
-                    value="Upcoming"
-                  />
-                  <span class="checkbox-text" data-translate="upcoming"
-                    >Upcoming</span
-                  >
-                </label>
-              </div>
-            </div>
+						<div class="filter-group">
+							<label class="filter-legend" data-translate="status"
+								>Status</label
+							>
+							<div class="checkbox-group">
+								<label class="checkbox-label">
+									<input
+										type="checkbox"
+										class="filter-checkbox"
+										name="status"
+										value="Ongoing" />
+									<span class="checkbox-text" data-translate="ongoing"
+										>Ongoing</span
+									>
+								</label>
+								<label class="checkbox-label">
+									<input
+										type="checkbox"
+										class="filter-checkbox"
+										name="status"
+										value="Completed" />
+									<span class="checkbox-text" data-translate="completed"
+										>Completed</span
+									>
+								</label>
+								<label class="checkbox-label">
+									<input
+										type="checkbox"
+										class="filter-checkbox"
+										name="status"
+										value="Upcoming" />
+									<span class="checkbox-text" data-translate="upcoming"
+										>Upcoming</span
+									>
+								</label>
+							</div>
+						</div>
 
-            <div class="filter-group">
-              <label class="filter-legend" data-translate="dateRange"
-                >Date Range</label
-              >
-              <div class="date-range-group">
-                <div class="date-input-group">
-                  <label
-                    class="date-label"
-                    for="startDate"
-                    data-translate="from"
-                    >From</label
-                  >
-                  <input
-                    type="date"
-                    class="date-input"
-                    id="startDate"
-                    name="startDate"
-                  />
-                </div>
-                <div class="date-input-group">
-                  <label class="date-label" for="endDate" data-translate="to"
-                    >To</label
-                  >
-                  <input
-                    type="date"
-                    class="date-input"
-                    id="endDate"
-                    name="endDate"
-                  />
-                </div>
-              </div>
-            </div>
+						<div class="filter-group">
+							<label class="filter-legend" data-translate="dateRange"
+								>Date Range</label
+							>
+							<div class="date-range-group">
+								<div class="date-input-group">
+									<label
+										class="date-label"
+										for="startDate"
+										data-translate="from"
+										>From</label
+									>
+									<input
+										type="date"
+										class="date-input"
+										id="startDate"
+										name="startDate" />
+								</div>
+								<div class="date-input-group">
+									<label class="date-label" for="endDate" data-translate="to"
+										>To</label
+									>
+									<input
+										type="date"
+										class="date-input"
+										id="endDate"
+										name="endDate" />
+								</div>
+							</div>
+						</div>
 
-            <button
-              type="submit"
-              class="apply-filters-btn"
-              id="applyFiltersBtn"
-              data-translate="applyFilters"
-            >
-              Apply Filters
-            </button>
-          </form>
-        </aside>
+						<button
+							type="submit"
+							class="apply-filters-btn"
+							id="applyFiltersBtn"
+							data-translate="applyFilters">
+							Apply Filters
+						</button>
+					</form>
+				</aside>
 
-        <section class="projects-section">
-          <div class="project-grid" id="projectGrid"></div>
-        </section>
-      </main>
+				<section class="projects-section">
+					<div class="project-grid" id="projectGrid"></div>
+				</section>
+			</main>
 
-      <nav class="pagination-nav" id="pagination"></nav>
-    </div>
-    <!-- ================================================================================================================================ -->
+			<nav class="pagination-nav" id="pagination"></nav>
+		</div>
+		<!-- ================================================================================================================================ -->
 
-    <!-- ===================================================== OUR SUPPORTERS =========================================================== -->
-    <main>
-      <!-- SUPPORTERS HEADING SECTION -->
-      <div id="supporters-background">
-        <h2 id="supporter-color">Our Supporters</h2>
-        <p class="supporters-description">
-          We're grateful to these organizations for making our work possible
-        </p>
-        <div class="section-underline"></div>
-        <br />
-      </div>
+		<!-- ===================================================== OUR SUPPORTERS =========================================================== -->
+		<main>
+			<!-- SUPPORTERS HEADING SECTION -->
+			<div id="supporters-background">
+				<h2 id="supporter-color">Our Supporters</h2>
+				<p class="supporters-description">
+					We're grateful to these organizations for making our work possible
+				</p>
+				<div class="section-underline"></div>
+				<br />
+			</div>
 
-      <!-- SCROLLING SPONSORS SECTION -->
-      <div class="sponsors-movingText">
-        <div class="sponsors-track">
-          <!-- 🔁 COPY #1: Sponsor Row -->
-          <div class="sponsors-content">
-            <div class="sponsor">
-              <img src="./SlikiProekt/DM.png" alt="Logo" />ДМ маркет
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/KB.jpg" alt="Logo" />Комерцијална Банка
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/Kristal-kirilica.png" alt="Logo" />Кристал
-            </div>
-            <div class="sponsor">
-              <img
-                src="./SlikiProekt/MakedonskoPivo.jpg"
-                alt="Logo"
-              />Македонско Пиво
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/mastercard-logo.webp" alt="Logo" />Мастер
-              Кард
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/Prilep.jpg" alt="Logo" />Општина Прилеп
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/SkopskoPivo.jpg" alt="Logo" />Скопска Пивара
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/Vitaminka.png" alt="Logo" />Витаминка
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/ZlatenDab.jpg" alt="Logo" />Златен Даб
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/Viva.png" alt="Logo" />Вива Сокови
-            </div>
-          </div>
+			<!-- SCROLLING SPONSORS SECTION -->
+			<div class="sponsors-movingText">
+				<div class="sponsors-track">
+					<!-- 🔁 COPY #1: Sponsor Row -->
+					<div class="sponsors-content">
+						<div class="sponsor">
+							<img src="./SlikiProekt/DM.png" alt="Logo" />ДМ маркет
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/KB.jpg" alt="Logo" />Комерцијална Банка
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Kristal-kirilica.png" alt="Logo" />Кристал
+						</div>
+						<div class="sponsor">
+							<img
+								src="./SlikiProekt/MakedonskoPivo.jpg"
+								alt="Logo" />Македонско Пиво
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/mastercard-logo.webp" alt="Logo" />Мастер
+							Кард
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Prilep.jpg" alt="Logo" />Општина Прилеп
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/SkopskoPivo.jpg" alt="Logo" />Скопска Пивара
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Vitaminka.png" alt="Logo" />Витаминка
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/ZlatenDab.jpg" alt="Logo" />Златен Даб
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Viva.png" alt="Logo" />Вива Сокови
+						</div>
+					</div>
 
-          <!-- 🔁 COPY #2: Repeat for Seamless Scroll -->
-          <div class="sponsors-content">
-            <div class="sponsor">
-              <img src="./SlikiProekt/DM.png" alt="Logo" />ДМ маркет
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/KB.jpg" alt="Logo" />Комерцијална Банка
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/Kristal-kirilica.png" alt="Logo" />Кристал
-            </div>
-            <div class="sponsor">
-              <img
-                src="./SlikiProekt/MakedonskoPivo.jpg"
-                alt="Logo"
-              />Македонско Пиво
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/mastercard-logo.webp" alt="Logo" />Мастер
-              Кард
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/Prilep.jpg" alt="Logo" />Општина Прилеп
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/SkopskoPivo.jpg" alt="Logo" />Скопска Пивара
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/Vitaminka.png" alt="Logo" />Витаминка
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/ZlatenDab.jpg" alt="Logo" />Златен Даб
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/Viva.png" alt="Logo" />Вива Сокови
-            </div>
-          </div>
+					<!-- 🔁 COPY #2: Repeat for Seamless Scroll -->
+					<div class="sponsors-content">
+						<div class="sponsor">
+							<img src="./SlikiProekt/DM.png" alt="Logo" />ДМ маркет
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/KB.jpg" alt="Logo" />Комерцијална Банка
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Kristal-kirilica.png" alt="Logo" />Кристал
+						</div>
+						<div class="sponsor">
+							<img
+								src="./SlikiProekt/MakedonskoPivo.jpg"
+								alt="Logo" />Македонско Пиво
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/mastercard-logo.webp" alt="Logo" />Мастер
+							Кард
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Prilep.jpg" alt="Logo" />Општина Прилеп
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/SkopskoPivo.jpg" alt="Logo" />Скопска Пивара
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Vitaminka.png" alt="Logo" />Витаминка
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/ZlatenDab.jpg" alt="Logo" />Златен Даб
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Viva.png" alt="Logo" />Вива Сокови
+						</div>
+					</div>
 
-          <!-- 🔁 COPY #3: Optional for Extra Loop on huge monitor -->
-          <div class="sponsors-content">
-            <div class="sponsor">
-              <img src="./SlikiProekt/DM.png" alt="Logo" />ДМ маркет
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/KB.jpg" alt="Logo" />Комерцијална Банка
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/Kristal-kirilica.png" alt="Logo" />Кристал
-            </div>
-            <div class="sponsor">
-              <img
-                src="./SlikiProekt/MakedonskoPivo.jpg"
-                alt="Logo"
-              />Македонско Пиво
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/mastercard-logo.webp" alt="Logo" />Мастер
-              Кард
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/Prilep.jpg" alt="Logo" />Општина Прилеп
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/SkopskoPivo.jpg" alt="Logo" />Скопска Пивара
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/Vitaminka.png" alt="Logo" />Витаминка
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/ZlatenDab.jpg" alt="Logo" />Златен Даб
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/Viva.png" alt="Logo" />Вива Сокови
-            </div>
-          </div>
+					<!-- 🔁 COPY #3: Optional for Extra Loop on huge monitor -->
+					<div class="sponsors-content">
+						<div class="sponsor">
+							<img src="./SlikiProekt/DM.png" alt="Logo" />ДМ маркет
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/KB.jpg" alt="Logo" />Комерцијална Банка
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Kristal-kirilica.png" alt="Logo" />Кристал
+						</div>
+						<div class="sponsor">
+							<img
+								src="./SlikiProekt/MakedonskoPivo.jpg"
+								alt="Logo" />Македонско Пиво
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/mastercard-logo.webp" alt="Logo" />Мастер
+							Кард
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Prilep.jpg" alt="Logo" />Општина Прилеп
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/SkopskoPivo.jpg" alt="Logo" />Скопска Пивара
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Vitaminka.png" alt="Logo" />Витаминка
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/ZlatenDab.jpg" alt="Logo" />Златен Даб
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Viva.png" alt="Logo" />Вива Сокови
+						</div>
+					</div>
 
-          <!-- 🔁 COPY #4: Optional for Extra Loop on huge monitor -->
-          <div class="sponsors-content">
-            <div class="sponsor">
-              <img src="./SlikiProekt/DM.png" alt="Logo" />ДМ маркет
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/KB.jpg" alt="Logo" />Комерцијална Банка
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/Kristal-kirilica.png" alt="Logo" />Кристал
-            </div>
-            <div class="sponsor">
-              <img
-                src="./SlikiProekt/MakedonskoPivo.jpg"
-                alt="Logo"
-              />Македонско Пиво
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/mastercard-logo.webp" alt="Logo" />Мастер
-              Кард
-            </div>
-            <div class="sponsor">
-              <img src="./SlikiProekt/Prilep.jpg" alt="Logo" />Општина Прилеп
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/SkopskoPivo.jpg" alt="Logo" />Скопска Пивара
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/Vitaminka.png" alt="Logo" />Витаминка
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/ZlatenDab.jpg" alt="Logo" />Златен Даб
-            </div>
-            <div class="sponsor">
-              <img src="SlikiProekt/Viva.png" alt="Logo" />Вива Сокови
-            </div>
-          </div>
-        </div>
-        <!-- End .sponsors-track -->
-      </div>
-      <!-- End .sponsors-movingText -->
-      <!-- ================================================================================================================================ -->
-      
-      <!-- ============================================================= PHOTOGALLERY ============================================================= -->
-      <div id="photogallery-a"></div>
-      <section class="gallery-section-wrapper" id="photogallery">
-        <header class="gallery-header">
-          <h2 class="gallery-header__title">Photo Gallery</h2>
-          <p class="gallery-header__subtitle">
-            Explore visual highlights from our projects and community events
-          </p>
-          <div class="section-underline"></div>
-          <br />
-        </header>
+					<!-- 🔁 COPY #4: Optional for Extra Loop on huge monitor -->
+					<div class="sponsors-content">
+						<div class="sponsor">
+							<img src="./SlikiProekt/DM.png" alt="Logo" />ДМ маркет
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/KB.jpg" alt="Logo" />Комерцијална Банка
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Kristal-kirilica.png" alt="Logo" />Кристал
+						</div>
+						<div class="sponsor">
+							<img
+								src="./SlikiProekt/MakedonskoPivo.jpg"
+								alt="Logo" />Македонско Пиво
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/mastercard-logo.webp" alt="Logo" />Мастер
+							Кард
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Prilep.jpg" alt="Logo" />Општина Прилеп
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/SkopskoPivo.jpg" alt="Logo" />Скопска Пивара
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Vitaminka.png" alt="Logo" />Витаминка
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/ZlatenDab.jpg" alt="Logo" />Златен Даб
+						</div>
+						<div class="sponsor">
+							<img src="./SlikiProekt/Viva.png" alt="Logo" />Вива Сокови
+						</div>
+					</div>
+				</div>
+				<!-- End .sponsors-track -->
+			</div>
+			<!-- End .sponsors-movingText -->
+			<!-- ================================================================================================================================ -->
 
-        <nav class="gallery-tabs">
-          <button
-            class="gallery-tabs__button gallery-tabs__button--active"
-            data-target="all"
-          >
-            All Photos
-          </button>
-          <button class="gallery-tabs__button" data-target="projects">
-            Projects
-          </button>
-          <button class="gallery-tabs__button" data-target="events">
-            Events
-          </button>
-          <button class="gallery-tabs__button" data-target="volunteers">
-            Volunteers
-          </button>
-        </nav>
+			<!-- ============================================================= PHOTOGALLERY ============================================================= -->
+			<div id="photogallery-a"></div>
+			<section class="gallery-section-wrapper" id="photogallery">
+				<header class="gallery-header">
+					<h2 class="gallery-header__title">Photo Gallery</h2>
+					<p class="gallery-header__subtitle">
+						Explore visual highlights from our projects and community events
+					</p>
+					<div class="section-underline"></div>
+					<br />
+				</header>
 
-        <main class="gallery-main-content">
-          <section class="gallery-section" id="all">
-            <div class="gallery-section__card-container"></div>
-          </section>
-        </main>
-        <div class="load-more-wrapper">
-          <div id="faq&from-connect"></div>
-          <button id="loadMoreBtn">Load More</button>
-        </div>
-      </section>
-      <div id="lightbox" class="lightbox">
-        <button class="lightbox__close">&times;</button>
-        <div class="lightbox__image-container">
-          <img class="lightbox__image" src="" alt="Preview" />
-          <button class="lightbox__arrow lightbox__arrow--left">
-            &#10094;
-          </button>
-          <button class="lightbox__arrow lightbox__arrow--right">
-            &#10095;
-          </button>
-        </div>
-      </div>
-      <!-- ================================================================================================================================ -->
-      <!-- ======================================================== FAQ / FORM ======================================================== -->
-      <!-- FAQ Секција (непроменета) -->
-      <div class="info-wrapper">
-        <section class="faq-section">
-          <h2 class="faq-title">(FAQ) Frequently Asked Questions</h2>
+				<nav class="gallery-tabs">
+					<button
+						class="gallery-tabs__button gallery-tabs__button--active"
+						data-target="all">
+						All Photos
+					</button>
+					<button class="gallery-tabs__button" data-target="projects">
+						Projects
+					</button>
+					<button class="gallery-tabs__button" data-target="events">
+						Events
+					</button>
+					<button class="gallery-tabs__button" data-target="volunteers">
+						Volunteers
+					</button>
+				</nav>
 
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>What are the main sources of funding?</span>
-              <i class="fas fa-chevron-down arrow-icon"></i>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Donations from individuals and local businesses who support our
-                mission.
-              </p>
-            </div>
-          </div>
+				<main class="gallery-main-content">
+					<section class="gallery-section" id="all">
+						<div class="gallery-section__card-container"></div>
+					</section>
+				</main>
+				<div class="load-more-wrapper">
+					<div id="faq&from-connect"></div>
+					<button id="loadMoreBtn">Load More</button>
+				</div>
+			</section>
+			<div id="lightbox" class="lightbox">
+				<button class="lightbox__close">&times;</button>
+				<div class="lightbox__image-container">
+					<img class="lightbox__image" src="" alt="Preview" />
+					<button class="lightbox__arrow lightbox__arrow--left">
+						&#10094;
+					</button>
+					<button class="lightbox__arrow lightbox__arrow--right">
+						&#10095;
+					</button>
+				</div>
+			</div>
+			<!-- ================================================================================================================================ -->
+			<!-- ======================================================== FAQ / FORM ======================================================== -->
+			<!-- FAQ Секција (непроменета) -->
+			<div class="info-wrapper">
+				<section class="faq-section">
+					<h2 class="faq-title">(FAQ) Frequently Asked Questions</h2>
 
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>What does it take to become a member?</span>
-              <i class="fas fa-chevron-down arrow-icon"></i>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Attend an introductory meeting to understand our values and
-                ongoing projects.
-              </p>
-            </div>
-          </div>
+					<div class="faq-item">
+						<button class="faq-question">
+							<span>What are the main sources of funding?</span>
+							<i class="fas fa-chevron-down arrow-icon"></i>
+						</button>
+						<div class="faq-answer">
+							<p>
+								Donations from individuals and local businesses who support our
+								mission.
+							</p>
+						</div>
+					</div>
 
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>What are the key areas of operation?</span>
-              <i class="fas fa-chevron-down arrow-icon"></i>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Youth engagement and education – supporting youth initiatives,
-                training, and cultural exchanges.
-              </p>
-            </div>
-          </div>
-        </section>
+					<div class="faq-item">
+						<button class="faq-question">
+							<span>What does it take to become a member?</span>
+							<i class="fas fa-chevron-down arrow-icon"></i>
+						</button>
+						<div class="faq-answer">
+							<p>
+								Attend an introductory meeting to understand our values and
+								ongoing projects.
+							</p>
+						</div>
+					</div>
 
-        <!-- Contact Form -->
-        <section class="contact-section">
-          <div class="contact-container">
-            <h2>Let's Keep In Touch</h2>
-            <form id="contactForm">
-              <div class="input-row">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full Name"
-                  required
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  required
-                />
-              </div>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                required
-              />
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                required
-              />
-              <textarea
-                name="message"
-                placeholder="Message"
-                rows="5"
-                required
-              ></textarea>
-              <button type="submit">Send Message</button>
-              <p id="formResponse" class="response-msg"></p>
-            </form>
-          </div>
-        </section>
-      </div>
-      <!-- ================================================================================================================================ -->
+					<div class="faq-item">
+						<button class="faq-question">
+							<span>What are the key areas of operation?</span>
+							<i class="fas fa-chevron-down arrow-icon"></i>
+						</button>
+						<div class="faq-answer">
+							<p>
+								Youth engagement and education – supporting youth initiatives,
+								training, and cultural exchanges.
+							</p>
+						</div>
+					</div>
+				</section>
 
-      <!-- ============================================================= FOOTER ============================================================= -->
-      <footer class="footer-wrapper" id="footer-connect">
-        <div class="footer-container">
-          <div class="footer-info">
-            <img
-              src="footer-images/test.png"
-              alt="Local Act Logo"
-              class="footer-logo"
-            />
-            <p class="footer-description">
-              Empowering communities through collaborative action and
-              sustainable development since 2018.
-            </p>
-            <div class="footer-socials">
-              <a
-                href="https://www.facebook.com/LocalActMbrod"
-                target="_blank"
-                aria-label="Facebook"
-                class="footer-social-link"
-              >
-                <img
-                  src="footer-images/fblogoo.png"
-                  alt="Facebook Logo"
-                  class="social-icon"
-                />
-              </a>
-              <a
-                href="https://www.instagram.com/lokalact/"
-                target="_blank"
-                aria-label="Instagram"
-                class="footer-social-link"
-              >
-                <img
-                  src="footer-images/instalogo.png"
-                  alt="Instagram Logo"
-                  class="social-icon"
-                />
-              </a>
-            </div>
-          </div>
+				<!-- Contact Form -->
+				<section class="contact-section">
+					<div class="contact-container">
+						<h2>Let's Keep In Touch</h2>
+						<form id="contactForm">
+							<div class="input-row">
+								<input
+									type="text"
+									name="name"
+									placeholder="Full Name"
+									required />
+								<input
+									type="tel"
+									name="phone"
+									placeholder="Phone Number"
+									required />
+							</div>
+							<input
+								type="email"
+								name="email"
+								placeholder="Email Address"
+								required />
+							<input
+								type="text"
+								name="subject"
+								placeholder="Subject"
+								required />
+							<textarea
+								name="message"
+								placeholder="Message"
+								rows="5"
+								required></textarea>
+							<button type="submit">Send Message</button>
+							<p id="formResponse" class="response-msg"></p>
+						</form>
+					</div>
+				</section>
+			</div>
+			<!-- ================================================================================================================================ -->
 
-          <div class="footer-links">
-            <h3 class="footer-title">Quick Links</h3>
-            <ul class="footer-link-list">
-              <li><a href="#home" class="footer-link">Home</a></li>
-              <li>
-                <a href="#missionvision-connect" class="footer-link"
-                  >Mission & Vision</a
-                >
-              </li>
-              <li><a href="#projects" class="footer-link">Projects</a></li>
-              <li><a href="#photogallery" class="footer-link">Gallery</a></li>
-            </ul>
-          </div>
+			<!-- ============================================================= FOOTER ============================================================= -->
+			<footer class="footer-wrapper" id="footer-connect">
+				<div class="footer-container">
+					<div class="footer-info">
+						<img
+							src="./footer-images/test.png"
+							alt="Local Act Logo"
+							class="footer-logo" />
+						<p class="footer-description">
+							Empowering communities through collaborative action and
+							sustainable development since 2018.
+						</p>
+						<div class="footer-socials">
+							<a
+								href="https://www.facebook.com/LocalActMbrod"
+								target="_blank"
+								aria-label="Facebook"
+								class="footer-social-link">
+								<img
+									src="./footer-images/fblogoo.png"
+									alt="Facebook Logo"
+									class="social-icon" />
+							</a>
+							<a
+								href="https://www.instagram.com/lokalact/"
+								target="_blank"
+								aria-label="Instagram"
+								class="footer-social-link">
+								<img
+									src="./footer-images/instalogo.png"
+									alt="Instagram Logo"
+									class="social-icon" />
+							</a>
+						</div>
+					</div>
 
-          <div class="contact-info">
-            <h3 class="footer-title">Contact Us</h3>
-            <div class="contact-item">
-              <img
-                src="footer-images/logolocation.png"
-                alt="Location Icon"
-                class="contact-icon"
-              />
-              <a
-                href="https://www.google.com/maps/place/Makedonski+Brod/..."
-                target="_blank"
-                class="contact-link"
-                >Makedonski Brod</a
-              >
-            </div>
-            <div class="contact-item">
-              <img
-                src="footer-images/maillogoo.png"
-                alt="Email Icon"
-                class="contact-icon"
-              />
-              <span class="contact-text">localactmbrod@gmail.com</span>
-            </div>
-            <div class="contact-item">
-              <img
-                src="footer-images/telephonelogo.png"
-                alt="Phone Icon"
-                class="contact-icon"
-              />
-              <span class="contact-text">+389 71 317 397</span>
-            </div>
-            <div class="contact-item">
-              <img
-                src="footer-images/clockpng.png"
-                alt="Clock Icon"
-                class="contact-icon"
-              />
-              <span class="contact-text">Mon–Fri: 9AM–5PM</span>
-            </div>
-          </div>
+					<div class="footer-links">
+						<h3 class="footer-title">Quick Links</h3>
+						<ul class="footer-link-list">
+							<li><a href="#home" class="footer-link">Home</a></li>
+							<li>
+								<a href="#missionvision-connect" class="footer-link"
+									>Mission & Vision</a
+								>
+							</li>
+							<li><a href="#projects" class="footer-link">Projects</a></li>
+							<li><a href="#photogallery" class="footer-link">Gallery</a></li>
+						</ul>
+					</div>
 
-          <div class="footer-journey">
-            <h3 class="footer-title">Our Journey</h3>
-            <ul class="journey-timeline simple">
-              <li>
-                <span class="timeline-year">2018</span> – Local Act was founded
-                with a vision for sustainable community action.
-              </li>
-              <li>
-                <span class="timeline-year">2019</span> – Launched our first
-                youth-led project in Makedonski Brod.
-              </li>
-              <li>
-                <span class="timeline-year">2021</span> – Expanded impact to 6
-                rural communities across Macedonia.
-              </li>
-              <li>
-                <span class="timeline-year">2023</span> – Built strategic
-                partnerships with schools and NGOs.
-              </li>
-              <li>
-                <span class="timeline-year">2024</span> – Recognized nationally
-                for civic innovation and youth engagement.
-              </li>
-            </ul>
-          </div>
-        </div>
+					<div class="contact-info">
+						<h3 class="footer-title">Contact Us</h3>
+						<div class="contact-item">
+							<img
+								src="./footer-images/logolocation.png"
+								alt="Location Icon"
+								class="contact-icon" />
+							<a
+								href="https://www.google.com/maps/place/Makedonski+Brod/..."
+								target="_blank"
+								class="contact-link"
+								>Makedonski Brod</a
+							>
+						</div>
+						<div class="contact-item">
+							<img
+								src="./footer-images/maillogoo.png"
+								alt="Email Icon"
+								class="contact-icon" />
+							<span class="contact-text">localactmbrod@gmail.com</span>
+						</div>
+						<div class="contact-item">
+							<img
+								src="./footer-images/telephonelogo.png"
+								alt="Phone Icon"
+								class="contact-icon" />
+							<span class="contact-text">+389 71 317 397</span>
+						</div>
+						<div class="contact-item">
+							<img
+								src="./footer-images/clockpng.png"
+								alt="Clock Icon"
+								class="contact-icon" />
+							<span class="contact-text">Mon–Fri: 9AM–5PM</span>
+						</div>
+					</div>
 
-        <div class="footer-bottom">© 2025 LOCAL ACT. All rights reserved.</div>
-      </footer>
+					<div class="footer-journey">
+						<h3 class="footer-title">Our Journey</h3>
+						<ul class="journey-timeline simple">
+							<li>
+								<span class="timeline-year">2018</span> – Local Act was founded
+								with a vision for sustainable community action.
+							</li>
+							<li>
+								<span class="timeline-year">2019</span> – Launched our first
+								youth-led project in Makedonski Brod.
+							</li>
+							<li>
+								<span class="timeline-year">2021</span> – Expanded impact to 6
+								rural communities across Macedonia.
+							</li>
+							<li>
+								<span class="timeline-year">2023</span> – Built strategic
+								partnerships with schools and NGOs.
+							</li>
+							<li>
+								<span class="timeline-year">2024</span> – Recognized nationally
+								for civic innovation and youth engagement.
+							</li>
+						</ul>
+					</div>
+				</div>
 
-      <!-- ================================================================================================================================ -->
-    </main>
-    <script>
-      setTimeout(function () {
-        window.scrollTo(0, 0);
-        document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
-      }, 0);
-      window.addEventListener("load", function () {
-        setTimeout(function () {
-          window.scrollTo(0, 0);
-          document.documentElement.scrollTop = 0;
-          document.body.scrollTop = 0;
-        }, 0);
-      });
-    </script>
-    <script>
-// Блокира десен клик
-document.addEventListener('contextmenu', event => event.preventDefault());
+				<div class="footer-bottom">© 2025 LOCAL ACT. All rights reserved.</div>
+			</footer>
 
-// Блокира F12 и некои други Developer Tools кратенки
-document.addEventListener('keydown', function (event) {
-    if (
-        event.key === "F12" ||
-        (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J" || event.key === "C")) ||
-        (event.ctrlKey && event.key === "U")
-    ) {
-        event.preventDefault();
-        return false;
-    }
-});
-</script>
+			<!-- ================================================================================================================================ -->
+		</main>
+		<script>
+			setTimeout(function () {
+				window.scrollTo(0, 0);
+				document.documentElement.scrollTop = 0;
+				document.body.scrollTop = 0;
+			}, 0);
+			window.addEventListener('load', function () {
+				setTimeout(function () {
+					window.scrollTo(0, 0);
+					document.documentElement.scrollTop = 0;
+					document.body.scrollTop = 0;
+				}, 0);
+			});
+		</script>
+		<script>
+			// Блокира десен клик
+			document.addEventListener('contextmenu', event => event.preventDefault());
 
-  </body>
+			// Блокира F12 и некои други Developer Tools кратенки
+			document.addEventListener('keydown', function (event) {
+				if (
+					event.key === 'F12' ||
+					(event.ctrlKey &&
+						event.shiftKey &&
+						(event.key === 'I' || event.key === 'J' || event.key === 'C')) ||
+					(event.ctrlKey && event.key === 'U')
+				) {
+					event.preventDefault();
+					return false;
+				}
+			});
+		</script>
+	</body>
 </html>
